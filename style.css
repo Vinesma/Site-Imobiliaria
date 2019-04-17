@@ -22,6 +22,7 @@ p{
 .dropdown {
   position: relative;
   display: inline-block;
+  text-decoration: underline;
 }
 
 /*HEADER*/
@@ -119,6 +120,20 @@ section .newsleft{
 section img{
 	width: 100%;
 	height: 100%;
+}
+
+/*CLIENTE.html*/
+
+section .userimgcontainer{
+	justify-content: center;
+}
+
+section .userimg{
+	border-radius: 8px;
+	width: 200px;
+	height: 200px;
+	margin-top: 20px; 
+	margin-bottom: 20px; 
 }
 
 /*FLEX*/
