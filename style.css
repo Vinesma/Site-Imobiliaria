@@ -19,6 +19,11 @@ p{
 	font-size: 0.9rem;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
 /*HEADER*/
 
 header{
@@ -75,6 +80,27 @@ header h2{
 
 .container_mid select{
 	margin-right: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  padding: 15px;
+  background-color: #113f67;
+  box-shadow: 0 1px 4px black;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-content select{
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
 }
 
 /*SECTION*/
@@ -165,6 +191,13 @@ footer p{
 /*MEDIA QUERY*/
 
 @media(max-width: 1199px){
+	.dropdown {
+  		position: relative;
+  		display: block;
+  		text-align: center;
+  		margin-top: 8px;
+	}
+
 	.container_mid{
 		flex-direction: column;
 		height: auto;
@@ -195,6 +228,10 @@ footer p{
 		margin-right: auto;
 		margin-left: auto;
 		width: 70%;
+	}
+
+	.dropdown-content {
+  		position: relative;
 	}
 
 	.flex{
