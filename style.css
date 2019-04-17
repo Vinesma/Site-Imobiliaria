@@ -122,20 +122,6 @@ section img{
 	height: 100%;
 }
 
-/*CLIENTE.html*/
-
-section .userimgcontainer{
-	justify-content: center;
-}
-
-section .userimg{
-	border-radius: 8px;
-	width: 200px;
-	height: 200px;
-	margin-top: 20px; 
-	margin-bottom: 20px; 
-}
-
 /*FLEX*/
 
 .flex{
@@ -188,6 +174,16 @@ section .userimg{
 	border-radius: 3px;
 	color: white;
 	background: #113f67;
+}
+
+/*CLIENTE.html*/
+
+.grid .userimg{
+	border-radius: 8px;
+	width: 200px;
+	height: 200px;
+	margin-top: 20px; 
+	margin-bottom: 20px; 
 }
 
 /*FOOTER*/
