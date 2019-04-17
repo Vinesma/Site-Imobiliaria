@@ -16,27 +16,33 @@
 				<label>Busca Rápida:</label>
 				<input class="notbtn" type="text" name="busca" placeholder="Código do imóvel">
 				<input class="formbtn" type="submit" name="submit" value="Pesquisar">
-			</form>
-			<form class="nodisplay" action="" method="POST">
-				<label>Tipo:</label>
-				<select name="tipo_imovel"">
-					<option value="casa">Casa</option>
-					<option value="terreno">Terreno</option>
-					<option value="apartamento">Apartamento</option>
-					<option value="comercial">Comercial</option>
-				</select>
-				<label>Finalidade:</label>
-				<select name="finalidade">
-					<option value="compra">Compra</option>
-					<option value="venda">Venda</option>
-				</select>
-				<label>Cidade:</label>
-				<select name="cidade">
-					<option value="petrolina">Petrolina</option>
-					<option value="juazeiro">Juazeiro</option>
-					<input class="formbtn" type="submit" name="submit_2" value="Pesquisar">
-				</select>
-			</form>
+				<span class="nodisplay">|</span>
+				<div class="dropdown">
+					<label>Pesquisa Avançada</label>
+					<div class="dropdown-content">
+						<form class="dropdown-content" action="" method="POST">
+							<label>Tipo:</label>
+							<select name="tipo_imovel"">
+								<option value="casa">Casa</option>
+								<option value="terreno">Terreno</option>
+								<option value="apartamento">Apartamento</option>
+								<option value="comercial">Comercial</option>
+							</select>
+						<label>Finalidade:</label>
+						<select name="finalidade">
+							<option value="compra">Compra</option>
+							<option value="venda">Venda</option>
+						</select>
+						<label>Cidade:</label>
+						<select name="cidade">
+							<option value="petrolina">Petrolina</option>
+							<option value="juazeiro">Juazeiro</option>
+						<input class="formbtn" type="submit" name="submit_2" value="Pesquisar">
+						</select>
+						</form>
+					</div>
+				</div>
+			</form>				
 			<form action="" method="POST">
 				<label>Login:</label>
 				<input class="notbtn" type="text" name="usuario" placeholder="Usuário">
