@@ -4,7 +4,7 @@ body{
 
 /*GLOBAIS*/
 
-h2{
+h2,h3,h4{
 	font-family: Verdana, sans-serif;
 	margin: 0;
 }
@@ -179,11 +179,87 @@ section img{
 /*CLIENTE.html*/
 
 .grid .userimg{
+	display: block;
 	border-radius: 8px;
 	width: 200px;
 	height: 200px;
 	margin-top: 20px; 
 	margin-bottom: 20px; 
+}
+
+.grid a{
+	display: block;
+	text-align: center;
+}
+
+.grid .userprofile_r{
+	padding-left: 10px;
+	padding-right: 12px;
+	grid-column-start: 3;
+	grid-row-start: 1;
+}
+
+.grid .userprofile_c{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-right: 400px;
+	grid-column-start: 2;
+	grid-row-start: 1;
+}
+
+.userprofile_c .datacliente h4,p,a,img{
+	display: inline-block;
+}
+
+.userprofile_c .datacliente a{
+	display: inline-block;
+	margin: 2px;
+	padding: 8px;
+}
+
+.userprofile_c .datacliente img{
+	display: inline-block;
+}
+
+.userprofile_c .datacliente p{
+	margin: 2px;
+}
+
+.grid .userprofile_l{
+	padding-left: 12px;
+	padding-right: 10px;
+	grid-column-start: 1;
+	grid-row-start: 1;
+}
+
+.grid .dashimg{
+	border: 1px solid black;
+	border-radius: 4px;
+	width: 50px;
+	height: 50px;
+}
+
+.userprofile_l .dashtop{
+	align-self: end;
+	grid-column-start: 2;
+	grid-row-start: 1;	
+}
+
+.userprofile_l .dash1{
+	grid-column-start: 1;
+	grid-row-start: 2;
+}
+
+.userprofile_l .dash2{
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
+
+.userprofile_l .dash3{
+	grid-column-start: 3;
+	grid-row-start: 2;
 }
 
 /*FOOTER*/
@@ -256,6 +332,12 @@ footer p{
 	.nodisplay{
 		display: none;
 	}
+
+	/*CLIENTE.html*/
+
+	.grid .userprofile_c{
+		padding-right: 20px;
+	}
 }
 
 @media(max-width: 768px){
@@ -293,5 +375,24 @@ footer p{
 	.item4,.item5,.item6,
 	.item7,.item8,.item9{
 		display: none;
-	}	
+	}
+
+	/*CLIENTE.html*/
+
+	.grid .userprofile_r{
+		grid-column-start: 1;
+		grid-row-start: 1;
+	}
+
+	.grid .userprofile_c{
+		grid-column-start: 1;
+		grid-row-start: 2;
+		padding-right: 20px;
+		border: 0;
+	}
+
+	.grid .userprofile_l{
+		grid-column-start: 1;
+		grid-row-start: 3;
+	}
 }
