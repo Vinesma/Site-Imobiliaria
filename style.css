@@ -130,7 +130,8 @@ section img{
 
 .container_title{
 	margin: 10px;
-	font-family: 'Anton', sans-serif;	
+	font-family: 'Anton', sans-serif;
+	font-size: 1.2rem;	
 	color: white;	
 }
 
