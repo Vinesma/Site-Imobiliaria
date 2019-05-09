@@ -283,6 +283,28 @@ section img{
 	grid-row-start: 2;
 }
 
+/*CADASTRO*/
+
+.form_cad h3{
+	padding: 10px 0px;
+}
+
+.form_cad label{
+	margin: 5px 0px;
+}
+
+.form_cad .submitbtn{
+	width: 25%;
+	margin: 10px 0px;
+	align-self: center;
+}
+
+.form_cad{
+	display: flex;
+	flex-direction: column;
+	padding: 15px 15px;
+}
+
 /*FOOTER*/
 
 footer{
