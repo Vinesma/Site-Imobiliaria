@@ -41,6 +41,7 @@ header h2{
 	border: none;
 	border-radius: 5px;
 	padding: 4px;
+	margin: 0px 5px;
 	transition-duration: 0.2s;
 }
 
@@ -139,6 +140,13 @@ section img{
 
 .flex{
 	display: flex;
+}
+
+.flex_center{
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	margin: 10px;
 }
 
 /*GRID*/
@@ -328,6 +336,11 @@ footer p{
 		margin-right: auto;
 		margin-left: auto;
 		width: 70%;
+	}
+
+	.flex_center .formbtn{
+		margin-right: 3px;
+		margin-left: 3px;
 	}
 
 	.dropdown-content {
