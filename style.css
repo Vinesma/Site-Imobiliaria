@@ -142,6 +142,11 @@ section img{
 	display: flex;
 }
 
+.flex_col{
+	display: flex;
+	flex-direction: column;
+}
+
 .flex_center{
 	display: flex;
 	justify-content: center;
@@ -285,6 +290,10 @@ section img{
 
 /*CADASTRO*/
 
+.form_cad{
+	padding: 15px 15px;
+}
+
 .form_cad h3{
 	padding: 10px 0px;
 }
@@ -293,16 +302,14 @@ section img{
 	margin: 5px 0px;
 }
 
+.form_cad .inputw{
+	width: 70%;
+}
+
 .form_cad .submitbtn{
 	width: 25%;
 	margin: 10px 0px;
 	align-self: center;
-}
-
-.form_cad{
-	display: flex;
-	flex-direction: column;
-	padding: 15px 15px;
 }
 
 /*FOOTER*/
@@ -442,5 +449,17 @@ footer p{
 	.grid .userprofile_l{
 		grid-column-start: 1;
 		grid-row-start: 3;
+	}
+
+	/*CADASTRO*/
+
+	.form_cad .inputw{
+	width: 100%;
+	}
+
+	.form_cad .submitbtn{
+	width: 50%;
+	margin: 10px 0px;
+	align-self: center;
 	}
 }
