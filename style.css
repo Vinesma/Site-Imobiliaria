@@ -20,9 +20,13 @@ p{
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
-  text-decoration: underline;
+  	position: relative;
+  	display: inline-block;
+  	text-decoration: underline;
+}
+
+.important_text{
+	color: red;
 }
 
 /*HEADER*/
@@ -302,8 +306,16 @@ section img{
 	margin: 5px 0px;
 }
 
+.form_cad fieldset{
+	margin: 5px 0px;
+}
+
 .form_cad .inputw{
 	width: 70%;
+}
+
+.form_cad .inputNumberw{
+	width: 10%;
 }
 
 .form_cad .submitbtn{

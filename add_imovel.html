@@ -55,26 +55,53 @@
 
 	<section class="cont_leftborder">
 		<div class="container_title">
-			<h3>Faça seu cadastro!</h3>
+			<h3>Adicione um novo imóvel:</h3>
 		</div>
 	</section>
 
 	<section>
 		<div>
 			<form class="flex_col form_cad" action="" method="POST">
-				<h3>Informe seus dados:</h3>
-				<label>Nome:</label>
-				<input class="inputw" type="text" name="nomeCad" placeholder="Nome completo">
-				<label>Senha:</label>
-				<input class="inputw" type="password" name="senhaCad" placeholder="Senha">
-				<label>Email:</label>
-				<input class="inputw" type="email" name="email" placeholder="Email">
-				<label>Tel:</label>
-				<input class="inputw" type="tel" name="tel" placeholder="Telefone">
+				<h3>Informe os dados do imóvel:</h3>
+				<label>Cidade:</label>
+				<select class="inputw" name="cidade" required>
+					<option value="petrolina">Petrolina</option>
+					<option value="juazeiro">Juazeiro</option>						
+				</select>
+				<label>Endereço:</label>
+				<input class="inputw" type="text" name="endereco" placeholder="Endereço" required>				
+				<label>Tipo:</label>
+					<select name="tipo_imovel" class="inputw" required>
+						<option value="casa">Casa</option>
+						<option value="terreno">Terreno</option>
+						<option value="apartamento">Apartamento</option>
+						<option value="comercial">Comercial</option>
+					</select>
+				<label>Finalidade:</label>
+					<select name="finalidade" class="inputw" required>
+						<option value="compra">Compra</option>	
+						<option value="venda">Venda</option>	
+					</select>
+				<fieldset class="inputw">
+					<legend>Quantidade de:</legend>
+					<label>Quartos (sem incluir suítes):</label>
+					<input class="inputNumberw" type="number" name="qquartos" placeholder="Nº Quartos" required>
+					<label>Banheiros (sem incluir suítes):</label>
+					<input class="inputNumberw" type="number" name="qbanheiros" placeholder="Nº Banheiros" required><br><br>
+					<label>Suites:</label>
+					<input class="inputNumberw" type="number" name="qsuites" placeholder="Nº Suites" required>					
+					<label>Garagens:</label>
+					<input class="inputNumberw" type="number" name="qgaragens" placeholder="Nº Garagens" required>
+				</fieldset>
+				<label>Área (m²):</label>
+				<input class="inputNumberw" type="number" name="area" placeholder="Área do lote" required>
+				<label>Descrição:</label>
+				<textarea class="inputw" name="descricao" placeholder="Uma descrição rápida do imóvel." required></textarea>
 				<label>Foto:</label>
-				<input type="file" name="img" accept=".jpg, .png">
+				<input class="inputw" type="file" name="img" accept=".jpg, .png" required>
+				<label><span class="important_text">*Todos os campos são obrigatórios.</span></label>
 				<input class="formbtn submitbtn" type="submit" name="submitCad" value="Fazer cadastro!">
-			</form>			
+			</form>
 		</div>
 	</section>
 
