@@ -66,10 +66,23 @@
 		<div>
 			<form class="flex_col form_cad" action="" method="POST">
 				<h3>Informe seus dados:</h3>
+				<label>Pessoa:</label>
+				<div>					
+					<input class="inputradio" type="radio" name="tipopessoa" value="Física" checked><label>Física</label><br>	
+					<input class="inputradio" type="radio" name="tipopessoa" value="Jurídica"><label>Jurídica</label>
+				</div>
 				<label>Nome:</label>
-				<input class="inputw" type="text" name="nomeCad" placeholder="Nome completo">
+				<input class="inputw" type="text" name="nomeCad" placeholder="Nome Completo">
+				<label>Nome Fantasia:</label>
+				<input class="inputw" type="text" name="nomeFt" placeholder="Nome Fantasia">
 				<label>Senha:</label>
-				<input class="inputw" type="password" name="senhaCad" placeholder="Senha">
+				<input class="inputw" type="text" name="senhaCad" placeholder="Senha">
+				<label>CPF:</label>
+				<input class="inputw" type="text" name="cpf" placeholder="CPF">
+				<label>CNPJ:</label>
+				<input class="inputw" type="text" name="cnpj" placeholder="CNPJ">
+				<label>Ramo:</label>
+				<input class="inputw" type="text" name="ramo" placeholder="Ramo">
 				<label>Email:</label>
 				<input class="inputw" type="email" name="email" placeholder="Email">
 				<label>Tel:</label>
