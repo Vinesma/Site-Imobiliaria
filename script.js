@@ -12,7 +12,7 @@ function setDisplay(){
 		for (let i = 0; i < classPF.length; i++) {
 			classPF[i].style.display = "block";
 		}
-	}else{
+	} else {
 		for (let i = 0; i < classPJ.length; i++) {
 			classPJ[i].style.display = "block";
 		}
@@ -56,7 +56,7 @@ function validaCadCli(){
 			alert("Um email válido é necessário!");
 			return false;
 		}
-	}else{
+	} else {
 		let nomeFt = document.forms["cad_cli"]["nomeFt"].value;
 		let senhaCad = document.forms["cad_cli"]["senhaCad"].value;
 		let cnpj = document.forms["cad_cli"]["cnpj"].value;
