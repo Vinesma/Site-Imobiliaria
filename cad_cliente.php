@@ -69,9 +69,13 @@
 				<h3>Informe seus dados:</h3>
 				<label>Pessoa:</label>
 				<div>					
-					<input id="radioPF" class="inputradio" type="radio" name="tipopessoa" value="Física" checked onchange="setDisplay()"><label>Física</label><br>	
-					<input id="radioPJ" class="inputradio" type="radio" name="tipopessoa" value="Jurídica" onchange="setDisplay()"><label>Jurídica</label>
+					<input id="radioPF" class="inputradio" type="radio" name="tipopessoa" 
+					value="Fisica" checked onchange="setDisplay()"><label>Física</label><br>	
+					<input id="radioPJ" class="inputradio" type="radio" name="tipopessoa" 
+					value="Juridica" onchange="setDisplay()"><label>Jurídica</label>
 				</div>
+				<label>Login:</label>
+					<input class="inputw" type="text" name="login" placeholder="Login">
 				<label class="jsSetPF">Nome:</label>
 					<input class="inputw jsSetPF" type="text" name="nomeCad" placeholder="Nome Completo">
 				<label class="jsSetPJ">Nome Fantasia:</label>
@@ -90,6 +94,15 @@
 					<input class="inputw" type="email" name="email" placeholder="Email">
 				<label>Tel:</label>
 					<input class="inputw" type="tel" name="tel" placeholder="Telefone">
+				<label class="jsSetPF">Sexo:</label>
+				<div>
+					<input id="sexoM" class="inputradio jsSetPF" type="radio" 
+					name="sexo" value="Masculino" checked><label class="jsSetPF">Masculino</label>
+					<input id="sexoF" class="inputradio jsSetPF" type="radio" 
+					name="sexo" value="Feminino"><label class="jsSetPF">Feminino</label>
+					<input id="sexoNB" class="inputradio jsSetPF" type="radio" 
+					name="sexo" value="Nao-Binario"><label class="jsSetPF">Não-Binário</label>
+				</div>	
 				<label>Foto:</label>
 					<input type="file" name="img" accept=".jpg, .png">
 				<input class="formbtn submitbtn" type="submit" name="submitCad" value="Fazer cadastro!">
