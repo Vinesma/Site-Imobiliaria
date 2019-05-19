@@ -46,9 +46,9 @@
 					</div>
 				</div>
 			</form>				
-			<form action="" method="POST">
+			<form action="db_login.php" name="login_form" method="POST" onsubmit="return validaLogin()">
 				<label><i class="fas fa-id-badge"></i> Login:</label>
-				<input class="notbtn" type="text" name="usuario" placeholder="Usuário">
+				<input class="notbtn" type="text" name="login" placeholder="Usuário">
 				<input class="notbtn" type="password" name="senha" placeholder="Senha">
 				<input class="formbtn" type="submit" name="submit_3" value="Login">
 				<span class="nodisplay">|</span>

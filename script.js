@@ -1,4 +1,4 @@
-function setDisplay(){
+function setDisplay(){ //faz a troca entre inputs para Pessoa Física ou Jurídica
 	let tipoPessoaF = document.getElementById("radioPF").checked;
 
 	let classPF = document.getElementsByClassName("jsSetPF");
@@ -23,71 +23,106 @@ function setDisplay(){
 	}
 }
 
-function validaCadCli(){
+function validaCadCli(){ //validação de cadastro de cliente
 	let tipoPessoaF = document.getElementById("radioPF").checked;
 
-	if (tipoPessoaF) {
-		let nomeCad = document.forms["cad_cli"]["nomeCad"].value;
-		let senhaCad = document.forms["cad_cli"]["senhaCad"].value;
+	let login = document.forms["cad_cli"]["login"].value;
+	let senhaCad = document.forms["cad_cli"]["senhaCad"].value;
+	let email = document.forms["cad_cli"]["email"].value;
+	let tel = document.forms["cad_cli"]["tel"].value;
+
+	if (login == null || login == ""){
+		alert("Um login válido é necessário!");
+		return false;
+	}else if (login.length > 40){
+		alert("O login não pode possuir mais que 40 caracteres!");
+		return false;
+	}
+
+	if (senhaCad == null || senhaCad == ""){
+		alert("Uma senha válida é necessária!");
+		return false;
+	}
+
+	if (senhaCad.length < 6){
+		alert("Sua senha deve ter pelo menos 6 caracteres!");
+		return false;
+	}else if (senhaCad.length > 20){
+		alert("A senha não pode possuir mais que 20 caracteres!");
+		return false;
+	}
+
+	if (email == null || email == ""){
+		alert("Um email válido é necessário!");
+		return false;
+	}else if (email.length > 50){
+		alert("O email não pode possuir mais que 50 caracteres!");
+		return false;
+	}
+
+	if (tel == null || tel == ""){
+		alert("Um telefone válido é necessário!");
+		return false;
+	}else if (tel.length > 30){
+		alert("O telefone não pode possuir mais que 30 caracteres!");
+		return false;
+	}
+
+	if (tipoPessoaF) {		
+		let nomeCad = document.forms["cad_cli"]["nomeCad"].value;	
 		let cpf = document.forms["cad_cli"]["cpf"].value;
-		let email = document.forms["cad_cli"]["email"].value;		
 
 		if (nomeCad == null || nomeCad == ""){
 			alert("Um nome válido é necessário!");
 			return false;
-		}
-
-		if (senhaCad == null || senhaCad == ""){
-			alert("Uma senha válida é necessária!");
+		}else if (nomeCad.length > 50){
+			alert("O nome não pode possuir mais que 50 caracteres!");
 			return false;
-		}
-
-		if (senhaCad.length < 6){
-			alert("Sua senha deve ter pelo menos 6 caracteres!");
-			return false;
-		}
+		}		
 
 		if (!TestaCPF(cpf)){
 			alert("Um CPF válido é necessário!");
 			return false;
 		}
-
-		if (email == null || email == ""){
-			alert("Um email válido é necessário!");
-			return false;
-		}
-	} else {
-		let nomeFt = document.forms["cad_cli"]["nomeFt"].value;
-		let senhaCad = document.forms["cad_cli"]["senhaCad"].value;
+		
+	}else{		
+		let nomeFt = document.forms["cad_cli"]["nomeFt"].value;		
 		let cnpj = document.forms["cad_cli"]["cnpj"].value;
 		let ramo = document.forms["cad_cli"]["ramo"].value;
-		let email = document.forms["cad_cli"]["email"].value;
-		let tel = document.forms["cad_cli"]["tel"].value;
 
 		if (nomeFt == null || nomeFt == ""){
-			alert("Um nome válido é necessário!");
+			alert("Um nome fantasia válido é necessário!");
+			return false;
+		}else if (nomeFt.length > 80){
+			alert("O nome fantasia não pode possuir mais que 80 caracteres");
 			return false;
 		}
 
-		if (senhaCad == null || senhaCad == ""){
-			alert("Uma senha válida é necessária!");
+		if (cnpj.length != 14){
+			alert("O CNPJ deve ter 14 caracteres!");
 			return false;
 		}
+	}
+}
 
-		if (senhaCad.length < 6){
-			alert("A senha deve ter pelo menos 6 caracteres!");
-			return false;
-		}
+function validaLogin(){
+	let login = document.forms["login_form"]["login"].value;
+	let senha = document.forms["login_form"]["senha"].value;
 
-		if (cnpj.length < 15){
-			alert("O CNPJ deve ter pelo menos 14 caracteres!");
-			return false;
-		}
+	if (login == null || login == ""){
+		alert("Um login válido é necessário!");
+		return false;
+	}else if (login.length > 40){
+		alert("O login não pode possuir mais que 40 caracteres");
+		return false;
+	}
 
-		if (email == null || email == ""){
-			alert("Um email válido é necessário!");
-			return false;
-		}
+	if (senha.length < 6){
+		alert("A senha tem pelo menos 6 caracteres!");
+		return false;
+	}else if (senha.length > 20){
+		alert("A senha não pode possuir mais que 20 caracteres!");
+		return false;
 	}
 }
 
