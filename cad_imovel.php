@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<div class="container_top">
-			<a href="index.html"><img src="img/houseLogo.png"></a>
+			<a href="index.php"><img src="img/houseLogo.png"></a>
 		</div>
 		<div class="container_mid">
 			<form action="" method="POST">
@@ -51,42 +51,60 @@
 				<input class="notbtn" type="password" name="senha" placeholder="Senha">
 				<input class="formbtn" type="submit" name="submit_3" value="Login">
 				<span class="nodisplay">|</span>
-				<label><a href="cad_cliente.html"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
+				<label><a href="cad_cliente.php"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
 			</form>
 		</div>
 	</header>
 
 	<section class="cont_leftborder">
 		<div class="container_title">
-			<h3>Dados do corretor:</h3>
+			<h3>Adicione um novo imóvel:</h3>
 		</div>
 	</section>
 
 	<section>
-		<div class="grid">			
-			<div class="userprofile_r">
-				<img class="userimg" src="img/default_user_img.png">
-				<a href="#">Editar dados</a>
-			</div>
-			<div class="userprofile_c">					
-					<div class="datacliente"><h4>CPF:</h4><p>111.111.111-11</p></div>
-					<div class="datacliente"><h4>CRECI:</h4><p>111111</p></div>
-					<div class="datacliente"><h4>Endereço:</h4><p>Rua exemplar, nº 111</p></div>
-					<div class="datacliente"><img class="dashimg" src="img/fb_icon.png"><a href="#">facebookprofile</a></div>
-					<div class="datacliente"><img class="dashimg" src="img/tw_icon.png"><a href="#">twitterprofile</a></div>
-			</div>
-			<div class="userprofile_l grid">
-				<h3 class="dashtop">Painel:</h3>
-				<div class="dash1">
-					<a href="#" title="Imóveis em locação"><img class="dashimg" src="img/dash_ploc.png"></a>
-				</div>
-				<div class="dash2">					
-					<a href="#" title="Imóveis em aquisição"><img class="dashimg" src="img/dash_pbuying.png"></a>	
-				</div>			
-				<div class="dash3">
-					<a href="cad_imovel.html" title="Adicionar imóveis"><img class="dashimg" src="img/dash_addhouse.png"></a>	
-				</div>
-			</div>	
+		<div>
+			<form class="flex_col form_cad" action="" method="POST">
+				<h3>Informe os dados do imóvel:</h3>
+				<label>Cidade:</label>
+				<select class="inputw" name="cidade" required>
+					<option value="petrolina">Petrolina</option>
+					<option value="juazeiro">Juazeiro</option>						
+				</select>
+				<label>Endereço:</label>
+				<input class="inputw" type="text" name="endereco" placeholder="Endereço" required>				
+				<label>Tipo:</label>
+					<select name="tipo_imovel" class="inputw" required>
+						<option value="casa">Casa</option>
+						<option value="terreno">Terreno</option>
+						<option value="apartamento">Apartamento</option>
+						<option value="comercial">Comercial</option>
+					</select>
+				<label>Finalidade:</label>
+					<select name="finalidade" class="inputw" required>
+						<option value="compra">Compra</option>	
+						<option value="venda">Venda</option>	
+					</select>
+				<fieldset class="inputw">
+					<legend>Quantidade de:</legend>
+					<label>Quartos (sem incluir suítes):</label>
+					<input class="inputNumberw" type="number" name="qquartos" placeholder="Nº Quartos" required>
+					<label>Banheiros (sem incluir suítes):</label>
+					<input class="inputNumberw" type="number" name="qbanheiros" placeholder="Nº Banheiros" required><br><br>
+					<label>Suites:</label>
+					<input class="inputNumberw" type="number" name="qsuites" placeholder="Nº Suites" required>					
+					<label>Garagens:</label>
+					<input class="inputNumberw" type="number" name="qgaragens" placeholder="Nº Garagens" required>
+				</fieldset>
+				<label>Área (m²):</label>
+				<input class="inputNumberw" type="number" name="area" placeholder="Área do lote" required>
+				<label>Descrição:</label>
+				<textarea class="inputw" name="descricao" placeholder="Uma descrição rápida do imóvel." required></textarea>
+				<label>Foto:</label>
+				<input class="inputw" type="file" name="img" accept=".jpg, .png" required>
+				<label><span class="important_text">*Todos os campos são obrigatórios.</span></label>
+				<input class="formbtn submitbtn" type="submit" name="submitCad" value="Fazer cadastro!">
+			</form>
 		</div>
 	</section>
 

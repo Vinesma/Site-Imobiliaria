@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<div class="container_top">
-			<a href="index.html"><img src="img/houseLogo.png"></a>
+			<a href="index.php"><img src="img/houseLogo.png"></a>
 		</div>
 		<div class="container_mid">
 			<form action="" method="POST">
@@ -51,7 +51,7 @@
 				<input class="notbtn" type="password" name="senha" placeholder="Senha">
 				<input class="formbtn" type="submit" name="submit_3" value="Login">
 				<span class="nodisplay">|</span>
-				<label><a href="cad_cliente.html"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
+				<label><a href="cad_cliente.php"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
 			</form>
 		</div>
 	</header>

@@ -6,13 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Anton|Roboto+Condensed" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<script type="text/javascript" src="script.js"></script> 
+	<script type="text/javascript" src="script.js"></script>	
 	<title>Site Imobiliária</title>
 </head>
-<body>
+<body>	
 	<header>
 		<div class="container_top">
-			<a href="index.html"><img src="img/houseLogo.png"></a>
+			<a href="index.php"><img src="img/houseLogo.png"></a>
 		</div>
 		<div class="container_mid">
 			<form action="" method="POST">
@@ -52,7 +52,7 @@
 				<input class="notbtn" type="password" name="senha" placeholder="Senha">
 				<input class="formbtn" type="submit" name="submit_3" value="Login">
 				<span class="nodisplay">|</span>
-				<label><a href="cad_cliente.html"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
+				<label><a href="cad_cliente.php"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
 			</form>
 		</div>
 	</header>

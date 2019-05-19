@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<div class="container_top">
-			<a href="index.html"><img src="img/houseLogo.png"></a>
+			<a href="index.php"><img src="img/houseLogo.png"></a>
 		</div>
 		<div class="container_mid">
 			<form action="" method="POST">
@@ -51,44 +51,67 @@
 				<input class="notbtn" type="password" name="senha" placeholder="Senha">
 				<input class="formbtn" type="submit" name="submit_3" value="Login">
 				<span class="nodisplay">|</span>
-				<label><a href="cad_cliente.html"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
+				<label><a href="cad_cliente.php"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
 			</form>
 		</div>
 	</header>
 
 	<section class="cont_leftborder">
 		<div class="container_title">
-			<h3>Dados do cliente:</h3>
+			<h3>Informações do imóvel:</h3>
 		</div>
 	</section>
 
 	<section>
-		<div class="grid">			
-			<div class="userprofile_r">
-				<img class="userimg" src="img/default_user_img.png">
-				<a href="#">Editar dados</a>
-			</div>
-			<div class="userprofile_c">					
-					<div class="datacliente"><h4>CPF/CNPJ:</h4><p>111.111.111-11</p></div>
-					<div class="datacliente"><h4>Email:</h4><p>exemplo@email.com</p></div>
-					<div class="datacliente"><h4>Endereço:</h4><p>Rua exemplar, nº 111</p></div>
-					<div class="datacliente"><h4>Cidade:</h4><p>Petrolina</p></div>
-					<div class="datacliente"><h4>Telefone:</h4><p>(11)91111-1111</p></div>
-					<div class="datacliente"><img class="dashimg" src="img/fb_icon.png"><a href="#">facebookprofile</a></div>
-					<div class="datacliente"><img class="dashimg" src="img/tw_icon.png"><a href="#">twitterprofile</a></div>
-			</div>
-			<div class="userprofile_l grid">
-				<h3 class="dashtop">Painel:</h3>
-				<div class="dash1">
-					<a href="#" title="Meus Imóveis"><img class="dashimg" src="img/dash_myhouses.png"></a>
+		<div class="form_cad">
+			<div class="grid_info">
+				<div class="info_desc">				
+					<h3>Descrição:</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</div>
-				<div class="dash2">					
-					<a href="#" title="Imóveis em aquisição"><img class="dashimg" src="img/dash_buyer.png"></a>	
-				</div>			
-				<div class="dash3">
-					<a href="#" title="Imóveis em locação"><img class="dashimg" src="img/dash_locador.png"></a>	
+				<div class="info_stat">
+					<h3>Características:</h3>
+					<div class="iconbox boxborder flex_center">
+					<div class="boxborder_child">
+						<i class="fas fa-bed"> <p>Quartos:</p></i>
+						<p>0</p>
+					</div>
+					<div class="boxborder_child">
+						<i class="fas fa-toilet"> <p>Banheiros:</p></i>
+						<p>0</p>
+					</div>
+					<div class="boxborder_child">
+						<i class="fas fa-car"> <p>Garagens:</p></i>
+						<p>0</p>
+					</div>
+					<div class="boxborder_child">
+						<i class="fas fa-bed"></i>
+						<i class="fas fa-toilet"> <p>Suites:</p></i>
+						<p>0</p>
+					</div>
 				</div>
-			</div>	
+				<div class="info_loc">
+					<h4>Cidade:</h4><p class="boxborder_child">CIDADE</p>
+					<h4>Endereço:</h4><p class="boxborder_child">Rua 0 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+				</div>
+				<div class="info_outros">
+					<h4>Tipo:</h4><p class="boxborder_child">TIPO</p>
+					<h4>Finalidade:</h4><p class="boxborder_child">FINALIDADE</p>
+					<h4>Área (m²):</h4><p class="boxborder_child">000</p>
+				</div>
+				</div>
+				<div class="info_action">
+					<button class="formbtn">Alugar</button>
+					<button class="formbtn">Comprar</button><br>
+					<h4>R$ 000.000.000,00</h4>
+				</div>
+				<img class="info_img" src="img/house1.jpg">		
+			</div>		
 		</div>
 	</section>
 
