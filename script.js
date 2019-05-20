@@ -105,6 +105,48 @@ function validaCadCli(){ //validação de cadastro de cliente
 	}
 }
 
+function validaCadImovel(){
+	let endereco = document.forms["cad_imovel"]["endereco"].value;
+	let qquartos = document.forms["cad_imovel"]["qquartos"].value;
+	let qgaragens = document.forms["cad_imovel"]["qgaragens"].value;
+	let qsuites = document.forms["cad_imovel"]["qsuites"].value;
+	let qbanheiros = document.forms["cad_imovel"]["qbanheiros"].value;
+	let area = document.forms["cad_imovel"]["area"].value;
+
+	if (endereco == null || endereco == ""){
+		alert("Um endereco válido é necessário!");
+		return false;
+	}else if (endereco.length > 100){
+		alert("O endereco não pode possuir mais que 100 caracteres");
+		return false;
+	}
+
+	if (qquartos < 0){
+		alert("O numero de quartos não pode ser negativo!");
+		return false;
+	}
+
+	if (qgaragens < 0){
+		alert("O numero de garagens não pode ser negativo!");
+		return false;
+	}
+
+	if (qsuites < 0){
+		alert("O numero de suites não pode ser negativo!");
+		return false;
+	}
+
+	if (qbanheiros < 0){
+		alert("O numero de banheiros não pode ser negativo!");
+		return false;
+	}
+
+	if (area < 0){
+		alert("A area não pode ser negativa!");
+		return false;
+	}
+}
+
 function validaLogin(){
 	let login = document.forms["login_form"]["login"].value;
 	let senha = document.forms["login_form"]["senha"].value;
