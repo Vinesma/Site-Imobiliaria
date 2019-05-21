@@ -5,11 +5,7 @@
 		session_start(); 
 
 		if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
-  			unset($_SESSION['login']);
-  			unset($_SESSION['senha']);
-  			unset($_SESSION['id']);
-  			unset($_SESSION['isAdm']);
-  			header("location: http://localhost/Site-imobiliaria/index.php");
+  			include ("db_logout.php");
  		}
  
 		$logado = $_SESSION['login'];
@@ -18,10 +14,11 @@
 	<meta name="viewport" content=width=device-width>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Anton|Roboto+Condensed" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<script type="text/javascript" src="script.js"></script>
 	<title>Site Imobiliária</title>
 </head>
-<body>
+<body onload="setDisplayInfoCliente('<?php echo $_SESSION['tipo_pessoa'] ?>');">
 	<header>
 		<div class="container_top">
 			<a href="main.php"><img src="img/houseLogo.png"></a>
@@ -80,14 +77,8 @@
 				<img class="userimg" src="img/default_user_img.png">
 				<a href="#">Editar dados</a>
 			</div>
-			<div class="userprofile_c">					
-					<div class="datacliente"><h4>CPF/CNPJ:</h4><p>111.111.111-11</p></div>
-					<div class="datacliente"><h4>Email:</h4><p>exemplo@email.com</p></div>
-					<div class="datacliente"><h4>Endereço:</h4><p>Rua exemplar, nº 111</p></div>
-					<div class="datacliente"><h4>Cidade:</h4><p>Petrolina</p></div>
-					<div class="datacliente"><h4>Telefone:</h4><p>(11)91111-1111</p></div>
-					<div class="datacliente"><img class="dashimg" src="img/fb_icon.png"><a href="#">facebookprofile</a></div>
-					<div class="datacliente"><img class="dashimg" src="img/tw_icon.png"><a href="#">twitterprofile</a></div>
+			<div class="userprofile_c">
+				<?php include ("db_popCliente.php") ?>
 			</div>
 			<div class="userprofile_l grid">
 				<h3 class="dashtop">Painel:</h3>

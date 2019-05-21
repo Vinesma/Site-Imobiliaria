@@ -23,6 +23,30 @@ function setDisplay(){ //faz a troca entre inputs para Pessoa Física ou Jurídi
 	}
 }
 
+function setDisplayInfoCliente(tipo_pessoa){ //faz a troca entre displays para Pessoa Física ou Jurídica
+	
+	let classPF = document.getElementsByClassName("jsSetPF");
+	let classPJ = document.getElementsByClassName("jsSetPJ");
+
+	if (tipo_pessoa === 'J') {
+		for (let i = 0; i < classPJ.length; i++) {
+			classPJ[i].style.display = "block";
+		}
+
+		for (let i = 0; i < classPF.length; i++) {
+			classPF[i].style.display = "none";
+		}
+	} else {
+		for (let i = 0; i < classPJ.length; i++) {
+			classPJ[i].style.display = "none";
+		}
+
+		for (let i = 0; i < classPF.length; i++) {
+			classPF[i].style.display = "block";
+		}	
+	}
+}
+
 function validaCadCli(){ //validação de cadastro de cliente
 	let tipoPessoaF = document.getElementById("radioPF").checked;
 

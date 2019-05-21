@@ -36,12 +36,20 @@
 	 		if($result->num_rows > 0 ){
 				$_SESSION['login'] = $login;
 				$_SESSION['senha'] = $senha;
+
 				$sql = "SELECT ID_CL FROM cliente WHERE login = '$login' AND senha = '$senha'";
 				$result = $conn->query($sql);
 				while($row = $result->fetch_assoc()){
         			$_SESSION["id"] = $row["ID_CL"];
     			}
-				header("location: http://localhost/Site-imobiliaria/main.php");
+
+    			$sql = "SELECT tipo_pessoa FROM cliente WHERE login = '$login' AND senha = '$senha'";
+				$result = $conn->query($sql);
+				while($row = $result->fetch_assoc()){
+        			$_SESSION["tipo_pessoa"] = $row["tipo_pessoa"];
+    			}
+
+				header("location: main.php");
 			}else{
 				$sql = "SELECT * FROM corretor WHERE login = '$login' AND senha = '$senha'";
 
@@ -49,22 +57,23 @@
 					if($result->num_rows > 0 ){
 						$_SESSION['login'] = $login;
 						$_SESSION['senha'] = $senha;
+
 						$sql = "SELECT ID_CT FROM corretor WHERE login = '$login' AND senha = '$senha'";
 						$result = $conn->query($sql);
 						while($row = $result->fetch_assoc()){
 	        				$_SESSION["id"] = $row["ID_CT"];
 	    				}
+
+	    				$_SESSION["tipo_pessoa"] = 'A';
 	    				$_SESSION['isAdm'] = true;
-						header("location: http://localhost/Site-imobiliaria/main.php");			  		
+						header("location: main.php");
 					}else{
-						unset ($_SESSION['login']);
-				  		unset ($_SESSION['senha']);
-				  		header("location: http://localhost/Site-imobiliaria/index.php");	
+						include ("db_logout.php");
 					}
 				}else{
-					echo "Erro: " . $sql . "<br>" . $conn->error;	
+					echo "Erro: " . $sql . "<br>" . $conn->error;
 				}
-			}				
+			}
 		}else{
 		    echo "Erro: " . $sql . "<br>" . $conn->error;
 		}

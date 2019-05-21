@@ -1,34 +1,95 @@
 <?php
-	populate();
+	//session_start();
 
- 	function ConnectTo (){
- 		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbname = "website_imobiliaria";
+	if ($_SESSION['tipo_pessoa'] == 'F'){
+		populatePessoaFisica();	
+	}elseif ($_SESSION['tipo_pessoa'] == 'J'){
+		populatePessoaJuridica();	
+	}else{
+		#WIP
+	}
 
-		// Cria conexão
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Checa conexão
-		if ($conn->connect_error) {
-	    	die("Connection failed: " . $conn->connect_error);
-		}
-
-		return $conn;
- 	}
-	
- 	function CloseConnection($conn){
- 		$conn->close();	
- 	}
-
- 	function populate(){ //WIP
+ 	function populatePessoaFisica(){ //WIP
 		$conn = ConnectTo();
 
-		$sql = "SELECT nome FROM tipo_imovel";
+		$id = $_SESSION['id'];
+
+		$sql = "SELECT cpf FROM pessoa_fisica WHERE FK_CL = '$id'";
 
 		if ($result = $conn->query($sql)) {
 		    while($row = $result->fetch_assoc()) {
-        		echo ("<option value='".$row["nome"]."'>".$row["nome"]."</option>");
+        		echo ("<div class="."datacliente jsSetPF"."><h4>CPF:</h4><p>".$row["cpf"]."</p></div>");
+    		}
+
+    		$sql = "SELECT email FROM cliente WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {
+        		echo ("<div class="."datacliente"."><h4>Email:</h4><p>".$row["email"]."</p></div>");
+    		}
+
+    		$sql = "SELECT endereco FROM cliente WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {
+        		echo ("<div class="."datacliente"."><h4>Endereço:</h4><p>".$row["endereco"]."</p></div>");
+    		}
+
+    		$sql = "SELECT telefone FROM cliente WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {
+        		echo ("<div class="."datacliente"."><h4>Telefone:</h4><p>".$row["telefone"]."</p></div>");
+    		}
+
+    		$sql = "SELECT sexo FROM cliente WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {//error
+        		echo ("<div class="."datacliente"."><h4>Sexo:</h4><p>".$row["sexo"]."</p></div>");
+    		}
+		}else{
+			echo "Erro: " . $sql . "<br>" . $conn->error;
+		}		
+		CloseConnection($conn);
+	}
+
+	function populatePessoaJuridica(){ //WIP
+		$conn = ConnectTo();
+
+		$id = $_SESSION['id'];
+
+		$sql = "SELECT nomef FROM pessoa_juridica WHERE FK_CL = '$id'";
+
+		if ($result = $conn->query($sql)) {
+		    while($row = $result->fetch_assoc()) {
+        		echo ("<div class="."datacliente jsSetPJ"."><h4>Nome Fantasia:</h4><p>".$row["nomef"]."</p></div>");
+    		}
+
+    		$sql = "SELECT cnpj FROM pessoa_juridica WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {//error
+        		echo ("<div class="."datacliente"."><h4>CNPJ:</h4><p>".$row["cnpj"]."</p></div>");
+    		}
+
+    		$sql = "SELECT ramo FROM pessoa_juridica WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {
+        		echo ("<div class="."datacliente"."><h4>Ramo:</h4><p>".$row["ramo"]."</p></div>");
+    		}
+
+    		$sql = "SELECT email FROM cliente WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {
+        		echo ("<div class="."datacliente"."><h4>Email:</h4><p>".$row["email"]."</p></div>");
+    		}
+
+    		$sql = "SELECT endereco FROM cliente WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {
+        		echo ("<div class="."datacliente"."><h4>Endereço:</h4><p>".$row["endereco"]."</p></div>");
+    		}
+
+    		$sql = "SELECT telefone FROM cliente WHERE ID_CL = '$id'";
+    		$result = $conn->query($sql);
+    		while($row = $result->fetch_assoc()) {
+        		echo ("<div class="."datacliente"."><h4>Telefone:</h4><p>".$row["telefone"]."</p></div>");
     		}
 		}else{
 			echo "Erro: " . $sql . "<br>" . $conn->error;

@@ -159,6 +159,10 @@ section img{
 	height: 100%;
 }
 
+section a:link{
+	color: #226597!important;
+}
+
 .iconbox{
  	justify-content: space-evenly;
  	margin-top: 0; 		

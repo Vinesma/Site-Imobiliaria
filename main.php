@@ -5,11 +5,7 @@
 		session_start(); 
 
 		if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
-  			unset($_SESSION['login']);
-  			unset($_SESSION['senha']);
-  			unset($_SESSION['id']);
-  			unset($_SESSION['isAdm']);
-  			header("location: http://localhost/Site-imobiliaria/index.php");
+			include ("db_logout.php");
  		}
  
 		$logado = $_SESSION['login'];
