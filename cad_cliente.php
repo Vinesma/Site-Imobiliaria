@@ -26,10 +26,7 @@
 						<form class="dropdown-content" action="" method="POST">
 							<label>Tipo:</label>
 							<select name="tipo_imovel">
-								<option value="casa">Casa</option>
-								<option value="terreno">Terreno</option>
-								<option value="apartamento">Apartamento</option>
-								<option value="comercial">Comercial</option>
+								<?php include ("db_popSelect.php");//popula o select com dados do BD?>
 							</select>
 						<label>Finalidade:</label>
 						<select name="finalidade">
@@ -104,7 +101,7 @@
 					name="sexo" value="Nao-Binario"><label class="jsSetPF">Não-Binário</label>
 				</div>	
 				<label>Foto:</label>
-					<input type="file" name="img" accept=".jpg, .png">
+					<input type="file" name="img" accept=".jpg, .png" required>
 				<input class="formbtn submitbtn" type="submit" name="submitCad" value="Fazer cadastro!">
 			</form>			
 		</div>

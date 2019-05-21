@@ -45,6 +45,6 @@
 		}			
 
 		CloseConnection($conn);
-		//header("Location: http://localhost/Site-imobiliaria/cad_imovel.php");	
+		header("Location: http://localhost/Site-imobiliaria/cad_imovel.php");	
 	}
 ?> 

@@ -1,5 +1,5 @@
  <?php
- 	if ($_POST["tipopessoa"] === "Física") {
+ 	if ($_POST["tipopessoa"] === "Fisica") {
  		InsertPessoaFisica();
  	}else{
  		InsertPessoaJuridica();
@@ -36,9 +36,10 @@
 		$user_email = $_POST["email"];
 		$user_tel = $_POST["tel"];
 		$user_sexo = $_POST["sexo"];
+		$user_foto = $_POST["img"];
 
-		$sql = "INSERT INTO cliente (login, senha, endereco , email, telefone) 
-		VALUES ('$user_login', '$user_password', '$user_endereco', '$user_email', '$user_tel')";
+		$sql = "INSERT INTO cliente (login, senha, endereco , email, telefone, imagem) 
+		VALUES ('$user_login', '$user_password', '$user_endereco', '$user_email', '$user_tel', '$user_foto')";
 
 		if ($conn->query($sql) === TRUE) {
 		    echo "Cliente cadastrado com sucesso!";
@@ -58,7 +59,7 @@
 		}				
 
 		CloseConnection($conn);
-		header("Location: http://localhost/Site-imobiliaria/cad_cliente.php");	
+		header("Location: http://localhost/Site-imobiliaria/index.php");	
 	}
 
 	function InsertPessoaJuridica(){
@@ -72,9 +73,10 @@
 		$user_ramo = $_POST["ramo"];
 		$user_email = $_POST["email"];
 		$user_tel = $_POST["tel"];
+		$user_foto = $_POST["img"];
 
-		$sql = "INSERT INTO cliente (login, senha, endereco , email, telefone) 
-		VALUES ('$user_login', '$user_password', '$user_endereco', '$user_email', '$user_tel')";
+		$sql = "INSERT INTO cliente (login, senha, endereco , email, telefone, imagem) 
+		VALUES ('$user_login', '$user_password', '$user_endereco', '$user_email', '$user_tel', '$user_foto')";
 
 		if ($conn->query($sql) === TRUE) {
 		    echo "Cliente cadastrado com sucesso!";
@@ -91,9 +93,9 @@
 		    echo "Pessoa Jurídica cadastrada com sucesso!";
 		} else {
 		    echo "Erro: " . $sql . "<br>" . $conn->error;
-		}				
+		}
 
 		CloseConnection($conn);
-		header("Location: http://localhost/Site-imobiliaria/cad_cliente.php");	
+		header("Location: http://localhost/Site-imobiliaria/index.php");	
 	}	
 ?> 

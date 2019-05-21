@@ -26,10 +26,7 @@
 						<form class="dropdown-content" action="" method="POST">
 							<label>Tipo:</label>
 							<select name="tipo_imovel">
-								<option value="casa">Casa</option>
-								<option value="terreno">Terreno</option>
-								<option value="apartamento">Apartamento</option>
-								<option value="comercial">Comercial</option>
+								<?php include ("db_popSelect.php");//popula o select com dados do BD?>
 							</select>
 						<label>Finalidade:</label>
 						<select name="finalidade">

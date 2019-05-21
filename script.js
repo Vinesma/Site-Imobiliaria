@@ -159,7 +159,7 @@ function validaLogin(){
 		return false;
 	}
 
-	if (senha.length < 6){
+	if (senha.length <= 4){
 		alert("A senha tem pelo menos 6 caracteres!");
 		return false;
 	}else if (senha.length > 20){
