@@ -52,11 +52,17 @@
 					</div>
 				</div>
 			</form>
-			<?php 
+			<?php
+				if ($_SESSION['tipo_pessoa'] == 'A') {
+					$page = 'info_corretor.php';
+				}else{
+					$page = 'info_cliente.php';
+				}
+
 				echo 
 				'<form action="" name="login_form" method="POST">
 					<label><i class="fas fa-id-badge"></i> Logado como:</label>
-					<a href="info_cliente.php"><label>' . $_SESSION['login'] . '</label></a>
+					<a href="'.$page.'"><label>' . $_SESSION['login'] . '</label></a>
 					<img class="profileimg_small" src="db_getImageByID.php?id='.$_SESSION['id'].'&isAdm='.$_SESSION['isAdm'].'" srcset="img/default_user_img.png"">
 					<span class="nodisplay">|</span>
 					<label><a href="db_logout.php"><i class="fas fa-sign-in-alt"></i> Logout</a></label>

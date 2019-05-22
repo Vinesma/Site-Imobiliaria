@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php //verifica se existe esta sessão
+		session_start(); 
+
+		if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+  			include ("db_logout.php");
+ 		}
+ 
+		$logado = $_SESSION['login'];
+	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content=width=device-width>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Anton|Roboto+Condensed" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<script type="text/javascript" src="script.js"></script>  
 	<title>Site Imobiliária</title>
 </head>
 <body>
 	<header>
 		<div class="container_top">
-			<a href="index.php"><img src="img/houseLogo.png"></a>
+			<a href="main.php"><img src="img/houseLogo.png"></a>
 		</div>
 		<div class="container_mid">
 			<form action="" method="POST">
@@ -25,10 +35,7 @@
 						<form class="dropdown-content" action="" method="POST">
 							<label>Tipo:</label>
 							<select name="tipo_imovel">
-								<option value="casa">Casa</option>
-								<option value="terreno">Terreno</option>
-								<option value="apartamento">Apartamento</option>
-								<option value="comercial">Comercial</option>
+								<?php include ("db_popSelect.php");//popula o select com dados do BD?>
 							</select>
 						<label>Finalidade:</label>
 						<select name="finalidade">
@@ -45,14 +52,22 @@
 					</div>
 				</div>
 			</form>				
-			<form action="" method="POST">
-				<label><i class="fas fa-id-badge"></i> Login:</label>
-				<input class="notbtn" type="text" name="usuario" placeholder="Usuário">
-				<input class="notbtn" type="password" name="senha" placeholder="Senha">
-				<input class="formbtn" type="submit" name="submit_3" value="Login">
-				<span class="nodisplay">|</span>
-				<label><a href="cad_cliente.php"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
-			</form>
+			<?php
+				if ($_SESSION['tipo_pessoa'] == 'A') {
+					$page = 'info_corretor.php';
+				}else{
+					$page = 'info_cliente.php';
+				}
+
+				echo 
+				'<form action="" name="login_form" method="POST">
+					<label><i class="fas fa-id-badge"></i> Logado como:</label>
+					<a href="'.$page.'"><label>' . $_SESSION['login'] . '</label></a>
+					<img class="profileimg_small" src="db_getImageByID.php?id='.$_SESSION['id'].'&isAdm='.$_SESSION['isAdm'].'" srcset="img/default_user_img.png"">
+					<span class="nodisplay">|</span>
+					<label><a href="db_logout.php"><i class="fas fa-sign-in-alt"></i> Logout</a></label>
+				</form>';					
+			 ?>	
 		</div>
 	</header>
 
@@ -69,11 +84,7 @@
 				<a href="#">Editar dados</a>
 			</div>
 			<div class="userprofile_c">					
-					<div class="datacliente"><h4>CPF:</h4><p>111.111.111-11</p></div>
-					<div class="datacliente"><h4>CRECI:</h4><p>111111</p></div>
-					<div class="datacliente"><h4>Endereço:</h4><p>Rua exemplar, nº 111</p></div>
-					<div class="datacliente"><img class="dashimg" src="img/fb_icon.png"><a href="#">facebookprofile</a></div>
-					<div class="datacliente"><img class="dashimg" src="img/tw_icon.png"><a href="#">twitterprofile</a></div>
+					<?php include ("db_popCliente.php") ?>		
 			</div>
 			<div class="userprofile_l grid">
 				<h3 class="dashtop">Painel:</h3>
