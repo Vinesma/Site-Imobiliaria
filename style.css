@@ -166,7 +166,8 @@ section a:link{
 .iconbox{
  	justify-content: space-evenly;
  	margin-top: 0; 		
- 	margin-bottom: 0; 	 	
+ 	margin-bottom: 0;
+ 	border-top: 1px solid black 	 	
 }
 
 .boxborder{
@@ -215,8 +216,8 @@ section a:link{
 }
 
 .grid img{
-	height: 70%;
-	width: 100%;
+	height: 30vh;
+	width: 30vw;
 }
 
 .grid p{
@@ -257,6 +258,11 @@ section a:link{
 	border-radius: 3px;
 	color: white;
 	background: #113f67;
+	width: 30vw;
+}
+
+.description{
+	height: 100px;
 }
 
 /*GRID INFO*/

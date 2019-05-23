@@ -33,11 +33,12 @@
 		$im_qsuites = $_POST["qsuites"];
 		$im_qbanheiros = $_POST["qbanheiros"];
 		$im_endereco = $_POST["endereco"];
-		$im_foto = $_POST["img"];
 		$im_tipo = $_POST["tipo_imovel"];
 		$im_proprietario = $_POST["proprietario"];
+		$destdir = 'imgdata/';
+		$im_imglink = $destdir . uploadIMG($destdir);
 
-		$sql = "INSERT INTO imovel (cidade, finalidade, garagens , area, descricao, quartos, suites, banheiros, endereco, imagem, FK_TI, FK_CLPR) VALUES ('$im_cidade', '$im_finalidade', '$im_qgaragens', '$im_area', '$im_descricao', '$im_qquartos', '$im_qsuites', '$im_qbanheiros', '$im_endereco', '$im_foto', '$im_tipo', '$im_proprietario')";
+		$sql = "INSERT INTO imovel (cidade, finalidade, garagens , area, descricao, quartos, suites, banheiros, endereco, imglink, FK_TI, FK_CLPR) VALUES ('$im_cidade', '$im_finalidade', '$im_qgaragens', '$im_area', '$im_descricao', '$im_qquartos', '$im_qsuites', '$im_qbanheiros', '$im_endereco', '$im_imglink', '$im_tipo', '$im_proprietario')";
 
 		if ($conn->query($sql) === TRUE) {
 		    echo "Imovel cadastrado com sucesso!";
@@ -46,6 +47,17 @@
 		}
 
 		CloseConnection($conn);
-		//header("Location: http://localhost/Site-imobiliaria/cad_imovel.php");
+		header("Location: http://localhost/Site-imobiliaria/cad_imovel.php");
+	}
+
+	function uploadIMG($destdir){
+		$uploadfile = $destdir . basename($_FILES['img']['name']);
+		if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
+			echo "File is valid, and was successfully uploaded.\n";
+		} else {
+			echo "Upload failed";
+		}			
+			
+		return $_FILES['img']['name'];	
 	}
 ?> 

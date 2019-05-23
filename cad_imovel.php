@@ -80,7 +80,7 @@
 
 	<section>
 		<div>
-			<form class="flex_col form_cad" name="cad_imovel" action="db_imovel.php" method="POST" onsubmit="return validaCadImovel()">
+			<form enctype="multipart/form-data" class="flex_col form_cad" name="cad_imovel" action="db_imovel.php" method="POST" onsubmit="return validaCadImovel()">
 				<h3>Informe os dados do imóvel:</h3>
 				<label>Proprietário:</label>
 					<select name="proprietario" class="inputw" required>
@@ -121,7 +121,8 @@
 				<label>Descrição:</label>
 				<textarea class="inputw" name="descricao" placeholder="Uma descrição rápida do imóvel." required></textarea>
 				<label>Foto:</label>
-				<input class="inputw" type="file" name="img" accept=".jpg, .png" required>
+					<input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+    				<input class="inputw" name="img" type="file" accept=".jpg" required />				
 				<label><span class="important_text">*Todos os campos são obrigatórios.</span></label>
 				<input class="formbtn submitbtn" type="submit" name="submitCad" value="Fazer cadastro!">
 			</form>
