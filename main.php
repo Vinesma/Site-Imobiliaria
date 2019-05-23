@@ -2,7 +2,7 @@
 <html>
 <head>
 	<?php //verifica se existe esta sessão
-		session_start(); 
+		session_start();
 
 		if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
 			include ("db_logout.php");
@@ -79,31 +79,7 @@
 
 	<section>
 		<div class="flex">
-			<div class="newsleft">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<div class="iconbox boxborder flex_center">
-					<div class="boxborder_child">
-						<i class="fas fa-bed"> <p>Quartos:</p></i>
-						<p>0</p>
-					</div>
-					<div class="boxborder_child">
-						<i class="fas fa-toilet"> <p>Banheiros:</p></i>
-						<p>0</p>
-					</div>
-					<div class="boxborder_child">
-						<i class="fas fa-car"> <p>Garagens:</p></i>
-						<p>0</p>
-					</div>
-				</div>
-			</div>
-			<div class="newsright">
-				<img src="img/brickwall.jpg">
-			</div>
+			<?php include ("db_popHighlight.php") ?>
 		</div>
 	</section>
 

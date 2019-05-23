@@ -1,35 +1,34 @@
 <?php
-    popGrid();
+    popHighlight();
 
-    function popGrid(){
+    function popHighlight(){
         $conn = ConnectTo();
 
-        $sql = "SELECT * FROM imovel ORDER BY RAND() LIMIT 9";
-        $contador = 1;
+        $sql = "SELECT * FROM imovel ORDER BY RAND() LIMIT 1";
 
         if ($result = $conn->query($sql)) {
-            while(($row = $result->fetch_assoc()) || ($contador > 9)/*TEST THIS*/) {
+            $row = $result->fetch_assoc();
                 echo ('
-                    <div class="item'.$contador.' bordergrid">
-                        <a href="info_imovel.php?id='.$row['ID_IM'].'"><img src='.$row["imglink"].'></a>
-                        <div class="description"><p>'.$row["descricao"].'</p></div>
-                        <div class="iconbox flex_center nodisplay">
-                            <div>
+                    <div class="newsleft">
+                        <p>'.$row["descricao"].'</p>
+                        <div class="iconbox boxborder flex_center">
+                            <div class="boxborder_child">
                                 <i class="fas fa-bed"> <p>Quartos:</p></i>
                                 <p>'.$row["quartos"].'</p>
                             </div>
-                            <div>
+                            <div class="boxborder_child">
                                 <i class="fas fa-toilet"> <p>Banheiros:</p></i>
                                 <p>'.$row["banheiros"].'</p>
                             </div>
-                            <div>
+                            <div class="boxborder_child">
                                 <i class="fas fa-car"> <p>Garagens:</p></i>
                                 <p>'.$row["garagens"].'</p>
                             </div>
-                        </div>  
+                        </div>
+                    </div>
+                    <div class="newsright">
+                        <img src='.$row["imglink"].'>
                     </div>');
-                $contador++;
-            }
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
         }       
