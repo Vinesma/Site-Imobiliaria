@@ -30,8 +30,8 @@
 							</select>
 						<label>Finalidade:</label>
 						<select name="finalidade">
-							<option value="compra">Compra</option>
-							<option value="venda">Venda</option>
+							<option value="Venda">Venda</option>	
+							<option value="Aluguel">Aluguel</option>
 						</select>
 						<label>Cidade:</label>
 						<select name="cidade">
@@ -62,7 +62,7 @@
 
 	<section>
 		<div>
-			<form class="flex_col form_cad" name="cad_cli" action="db_insert.php" method="POST" onsubmit="return validaCadCli()">
+			<form enctype="multipart/form-data" class="flex_col form_cad" name="cad_cli" action="db_insert.php" method="POST" onsubmit="return validaCadCli()">
 				<h3>Informe seus dados:</h3>
 				<label>Pessoa:</label>
 				<div>					
@@ -98,10 +98,11 @@
 					<input id="sexoF" class="inputradio jsSetPF" type="radio" 
 					name="sexo" value="Feminino"><label class="jsSetPF">Feminino</label>
 					<input id="sexoNB" class="inputradio jsSetPF" type="radio" 
-					name="sexo" value="Nao-Binario"><label class="jsSetPF">Não-Binário</label>
+					name="sexo" value="Outro"><label class="jsSetPF">Não-Binário</label>
 				</div>	
 				<label>Foto:</label>
-					<input type="file" name="img" accept=".jpg, .png" required>
+					<input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+    				<input name="img" type="file" accept=".jpg" required />					
 				<input class="formbtn submitbtn" type="submit" name="submitCad" value="Fazer cadastro!">
 			</form>			
 		</div>

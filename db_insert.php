@@ -36,10 +36,11 @@
 		$user_email = $_POST["email"];
 		$user_tel = $_POST["tel"];
 		$user_sexo = $_POST["sexo"];
-		$user_foto = $_POST["img"];
-
-		$sql = "INSERT INTO cliente (login, senha, endereco , email, telefone, imagem, tipo_pessoa) 
-		VALUES ('$user_login', '$user_password', '$user_endereco', '$user_email', '$user_tel', '$user_foto', 'F')";
+		$destdir = 'imgdata/';
+		$user_imglink = $destdir . uploadIMG($destdir);
+		
+		$sql = "INSERT INTO cliente (login, senha, endereco , email, telefone, tipo_pessoa, imglink) 
+		VALUES ('$user_login', '$user_password', '$user_endereco', '$user_email', '$user_tel', 'F', '$user_imglink')";
 
 		if ($conn->query($sql) === TRUE) {
 		    echo "Cliente cadastrado com sucesso!";
@@ -73,10 +74,11 @@
 		$user_ramo = $_POST["ramo"];
 		$user_email = $_POST["email"];
 		$user_tel = $_POST["tel"];
-		$user_foto = $_POST["img"];
+		$destdir = 'imgdata/';
+		$user_imglink = $destdir . uploadIMG($destdir);
 
-		$sql = "INSERT INTO cliente (login, senha, endereco , email, telefone, imagem, tipo_pessoa) 
-		VALUES ('$user_login', '$user_password', '$user_endereco', '$user_email', '$user_tel', '$user_foto', 'J')";
+		$sql = "INSERT INTO cliente (login, senha, endereco , email, telefone, tipo_pessoa, imglink) 
+		VALUES ('$user_login', '$user_password', '$user_endereco', '$user_email', '$user_tel', 'J', '$user_imglink')";
 
 		if ($conn->query($sql) === TRUE) {
 		    echo "Cliente cadastrado com sucesso!";
@@ -97,5 +99,16 @@
 
 		CloseConnection($conn);
 		header("Location: index.php");	
+	}
+
+	function uploadIMG($destdir){
+		$uploadfile = $destdir . basename($_FILES['img']['name']);
+		if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
+			echo "File is valid, and was successfully uploaded.\n";
+		} else {
+			echo "Upload failed";
+		}			
+			
+		return $_FILES['img']['name'];	
 	}	
 ?> 

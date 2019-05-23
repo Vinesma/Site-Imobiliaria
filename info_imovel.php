@@ -32,8 +32,8 @@
 							</select>
 						<label>Finalidade:</label>
 						<select name="finalidade">
-							<option value="compra">Compra</option>
-							<option value="venda">Venda</option>
+							<option value="Venda">Venda</option>	
+							<option value="Aluguel">Aluguel</option>
 						</select>
 						<label>Cidade:</label>
 						<select name="cidade">
