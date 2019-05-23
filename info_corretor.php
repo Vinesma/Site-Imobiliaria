@@ -54,9 +54,9 @@
 			</form>				
 			<?php
 				if ($_SESSION['tipo_pessoa'] == 'A') {
-					$page = 'info_corretor.php';
-				}else{
-					$page = 'info_cliente.php';
+					$page = "info_corretor.php?id=".$_SESSION['id']."&tipo_pessoa=".$_SESSION['tipo_pessoa']."";
+				}else{ //TEST THIS
+					$page = "info_cliente.php?id=".$_SESSION['id']."&tipo_pessoa=".$_SESSION['tipo_pessoa']."";
 				}
 
 				echo 
@@ -67,7 +67,7 @@
 				echo
 					'<span class="nodisplay">|</span>
 					<label><a href="db_logout.php"><i class="fas fa-sign-in-alt"></i> Logout</a></label>
-				</form>';					
+				</form>';
 			 ?>	
 		</div>
 	</header>
@@ -81,7 +81,7 @@
 	<section>
 		<div class="grid">			
 			<div class="userprofile_r">
-				<img class="userimg" src="img/default_user_img.png">
+				<?php echo ('<img class="userimg" src="db_getImage.php?id='.$_GET['id'].'&tipo_pessoa='.$_GET['tipo_pessoa'].'">') ?> <!--TEST THIS-->
 				<a href="#">Editar dados</a>
 			</div>
 			<div class="userprofile_c">					

@@ -54,9 +54,9 @@
 			</form>
 			<?php
 				if ($_SESSION['tipo_pessoa'] == 'A') {
-					$page = 'info_corretor.php';
-				}else{
-					$page = 'info_cliente.php';
+					$page = 'info_corretor.php?id='.$_SESSION['id'].'&tipo_pessoa='.$_SESSION['tipo_pessoa'];
+				}else{ //TEST THIS
+					$page = 'info_cliente.php?id='.$_SESSION['id'].'&tipo_pessoa='.$_SESSION['tipo_pessoa'];
 				}
 
 				echo 

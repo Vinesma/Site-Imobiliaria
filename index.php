@@ -62,7 +62,7 @@
 
 	<section>
 		<div class="flex">
-			<?php include ("db_popHighlight.php") ?>
+			<?php include ("db_popHighlight.php") ?> <!--TEST THIS-->
 		</div>
 	</section>
 
