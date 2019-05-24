@@ -103,7 +103,13 @@
 	</section>
 
 	<footer>
-		<p>&copy; Otavio C. 2019</p>		
+		<div class="ft_left">
+			<a href="https://github.com/Vinesma"><p>Otavio C. &copy; 2019</p></a>	
+		</div>
+		<div class="ft_right">
+			<a href="https://www.facebook.com/"><p><i class="fab fa-facebook-square"></i>Facebook</p></a>
+			<a href="https://twitter.com/"><p><i class="fab fa-twitter-square"></i>Twitter</p></a>
+		</div>		
 	</footer>
 </body>
 </html>

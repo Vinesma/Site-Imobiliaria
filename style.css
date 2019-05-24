@@ -455,13 +455,41 @@ section a:link{
 
 footer{
 	text-align: center;
-	border-top: 1px #e0e2e5 solid;
-	background: #f3f9fb;
+	border-top: 1px #e0e2e5 solid;	
 }
 
 footer p{
 	margin: 0;
-	padding: 20px 0;
+	padding: 10px 0;
+}
+
+.ft_left{
+	float: left; 
+	padding-left: 30px;
+}
+
+.ft_left p{
+	background-color: #222831;
+	padding: 0 3px;
+	margin: 15px 5px 5px 5px;
+	border-radius: 3px;
+	color: white;
+}
+
+.ft_right{
+	float: right; 
+	padding-right: 30px;
+}
+
+.ft_right i{
+	padding: 0 5px;
+}
+
+.ft_right a{
+	background-color: #222831;
+	padding: 3px;
+	margin: 5px;
+	border-radius: 3px;
 }
 
 /*MEDIA QUERY*/
