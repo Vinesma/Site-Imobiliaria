@@ -1,7 +1,7 @@
  <?php
- 	GetImage();
+ 	GetImageByID();
 	
-	function GetImage(){
+	function GetImageByID(){
 		$conn = ConnectTo();
 
 		$user_id = $_SESSION["id"];

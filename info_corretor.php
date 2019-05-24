@@ -51,12 +51,12 @@
 						</form>
 					</div>
 				</div>
-			</form>				
+			</form>
 			<?php
 				if ($_SESSION['tipo_pessoa'] == 'A') {
-					$page = "info_corretor.php?id=".$_SESSION['id']."&tipo_pessoa=".$_SESSION['tipo_pessoa']."";
-				}else{ //TEST THIS
-					$page = "info_cliente.php?id=".$_SESSION['id']."&tipo_pessoa=".$_SESSION['tipo_pessoa']."";
+					$page = "info_corretor.php";
+				}else{
+					$page = "info_cliente.php";
 				}
 
 				echo 
@@ -81,7 +81,7 @@
 	<section>
 		<div class="grid">			
 			<div class="userprofile_r">
-				<?php echo ('<img class="userimg" src="db_getImage.php?id='.$_GET['id'].'&tipo_pessoa='.$_GET['tipo_pessoa'].'">') ?> <!--TEST THIS-->
+				<?php include ('db_getImage.php'); ?>
 				<a href="#">Editar dados</a>
 			</div>
 			<div class="userprofile_c">					

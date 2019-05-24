@@ -61,7 +61,7 @@
 
     		$sql = "SELECT cnpj FROM pessoa_juridica WHERE FK_CL = '$id'";
     		$result = $conn->query($sql);
-    		while($row = $result->fetch_assoc()) {//error
+    		while($row = $result->fetch_assoc()) {
         		echo ("<div class="."datacliente"."><h4>CNPJ:</h4><p>".$row["cnpj"]."</p></div>");
     		}
 

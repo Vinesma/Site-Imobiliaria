@@ -152,11 +152,17 @@ section{
 section .newsleft{
 	padding-left: 15px;
 	padding-right: 15px;
+	flex-grow: 1;
 }
 
-section img{
-	width: 100%;
-	height: 100%;
+section .newsright a{
+	float: right;
+}
+
+section .newsright img{
+	width: 400px;
+	height: 400px;
+	float: right;
 }
 
 section a:link{
@@ -307,6 +313,8 @@ section a:link{
 	border-radius: 3px;
 	grid-row-start: 1;
 	grid-column-start: 2;
+	width: 480px;
+	height: 380px;
 }
 
 .info_action{
@@ -349,7 +357,7 @@ section a:link{
 	border-right: 1px solid black;
 	padding-top: 15px;
 	padding-left: 20px;
-	padding-right: 400px;
+	padding-right: 300px;
 	grid-column-start: 2;
 	grid-row-start: 1;
 }

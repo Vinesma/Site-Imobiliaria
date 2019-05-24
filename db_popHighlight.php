@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="newsright">
-                        <img src='.$row["imglink"].'>
+                        <a href="info_imovel.php?id='.$row['ID_IM'].'"><img src='.$row["imglink"].'></a>
                     </div>');
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php
+		session_start();
+
+		$im_id = $_GET['id']; 
+	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content=width=device-width>
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -25,10 +30,7 @@
 						<form class="dropdown-content" action="" method="POST">
 							<label>Tipo:</label>
 							<select name="tipo_imovel">
-								<option value="casa">Casa</option>
-								<option value="terreno">Terreno</option>
-								<option value="apartamento">Apartamento</option>
-								<option value="comercial">Comercial</option>
+								<?php include ("db_popSelect.php");//popula o select com dados do BD?>
 							</select>
 						<label>Finalidade:</label>
 						<select name="finalidade">
@@ -44,15 +46,36 @@
 						</form>
 					</div>
 				</div>
-			</form>				
-			<form action="" method="POST">
-				<label><i class="fas fa-id-badge"></i> Login:</label>
-				<input class="notbtn" type="text" name="usuario" placeholder="Usuário">
-				<input class="notbtn" type="password" name="senha" placeholder="Senha">
-				<input class="formbtn" type="submit" name="submit_3" value="Login">
-				<span class="nodisplay">|</span>
-				<label><a href="cad_cliente.php"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
 			</form>
+			<?php
+				if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+					echo '
+					<form action="" method="POST">
+						<label><i class="fas fa-id-badge"></i> Login:</label>
+						<input class="notbtn" type="text" name="usuario" placeholder="Usuário">
+						<input class="notbtn" type="password" name="senha" placeholder="Senha">
+						<input class="formbtn" type="submit" name="submit_3" value="Login">
+						<span class="nodisplay">|</span>
+						<label><a href="cad_cliente.php"><i class="fas fa-sign-in-alt"></i> Fazer cadastro</a></label>
+					</form>';
+ 				}else{
+ 					if ($_SESSION['tipo_pessoa'] == 'A') {
+						$page = "info_corretor.php";
+					}else{
+						$page = "info_cliente.php";
+					}
+
+					echo 
+					'<form action="" name="login_form" method="POST">
+						<label><i class="fas fa-id-badge"></i> Logado como:</label>
+						<a href="'.$page.'"><label>' . $_SESSION['login'] . '</label></a>';
+						include ("db_getImageById.php");
+					echo
+						'<span class="nodisplay">|</span>
+						<label><a href="db_logout.php"><i class="fas fa-sign-in-alt"></i> Logout</a></label>
+					</form>';
+ 				}
+			?>		
 		</div>
 	</header>
 
@@ -110,7 +133,7 @@
 					<button class="formbtn">Comprar</button><br>
 					<h4>R$ 000.000.000,00</h4>
 				</div>
-				<img class="info_img" src="img/house1.jpg">		
+				<div><img class="info_img" src="img/house1.jpg"></div>		
 			</div>		
 		</div>
 	</section>

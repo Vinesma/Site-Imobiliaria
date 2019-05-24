@@ -4,8 +4,8 @@
 	function GetImage(){
 		$conn = ConnectTo();
 		
-		$user_id = $_GET["id"];
-		$tipo_pessoa = $_GET["tipo_pessoa"];
+		$user_id = $_SESSION["id"];
+		$tipo_pessoa = $_SESSION["tipo_pessoa"];
 
 		if ($user_id == null || $user_id == "") {
 			CloseConnection($conn);
@@ -18,7 +18,7 @@
 			
 			if ($result = $conn->query($sql)) {
 				$row = $result->fetch_assoc();
-        		echo $row['imglink'];
+        		echo '<img class="userimg" src="'.$row['imglink'].'">';
 			}else{
 		    	echo "Erro: " . $sql . "<br>" . $conn->error;
 			}
