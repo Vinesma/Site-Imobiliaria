@@ -24,15 +24,16 @@
 			<a href="main.php"><img src="img/houseLogo.png"></a>
 		</div>
 		<div class="container_mid">
-			<form action="" method="POST">
+			<form action="info_imovel.php" method="GET">
 				<label><i class="fas fa-search"></i> Busca Rápida:</label>
-				<input class="notbtn" type="text" name="busca" placeholder="Código do imóvel">
+				<input class="notbtn" type="text" name="id" placeholder="Código do imóvel">
 				<input class="formbtn" type="submit" name="submit" value="Pesquisar">
-				<span class="nodisplay">|</span>
+			</form>
+			<form action="busca.php" method="GET">
 				<div class="dropdown">
 					<label><i class="fas fa-search-plus"></i> Pesquisa Avançada</label>
 					<div class="dropdown-content">
-						<form class="dropdown-content" action="" method="POST">
+						<form class="dropdown-content" action="">
 							<label>Tipo:</label>
 							<select name="tipo_imovel">
 								<?php include ("db_popSelect.php");//popula o select com dados do BD?>
@@ -44,14 +45,14 @@
 						</select>
 						<label>Cidade:</label>
 						<select name="cidade">
-							<option value="petrolina">Petrolina</option>
-							<option value="juazeiro">Juazeiro</option>
+							<option value="Petrolina">Petrolina</option>
+							<option value="Juazeiro">Juazeiro</option>
 						<input class="formbtn" type="submit" name="submit_2" value="Pesquisar">
 						</select>
 						</form>
 					</div>
 				</div>
-			</form>				
+			</form>			
 			<?php
 				if ($_SESSION['tipo_pessoa'] == 'A') {
 					$page = 'info_corretor.php';

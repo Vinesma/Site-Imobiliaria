@@ -78,7 +78,7 @@ header h2{
 .container_mid{
 	width: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	height: 3.3rem;	
 	background-color: #226597;
 	color: white;
@@ -160,7 +160,7 @@ section .newsright a{
 }
 
 section .newsright img{
-	width: 400px;
+	width: 470px;
 	height: 400px;
 	float: right;
 }

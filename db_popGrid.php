@@ -8,7 +8,7 @@
         $contador = 1;
 
         if ($result = $conn->query($sql)) {
-            while(($row = $result->fetch_assoc()) || ($contador <= 9)/*TEST THIS*/) {
+            while(($row = $result->fetch_assoc()) && ($contador <= 9)) {
                 echo ('
                     <div class="item'.$contador.' bordergrid">
                         <a href="info_imovel.php?id='.$row['ID_IM'].'"><img src='.$row["imglink"].'></a>

@@ -9,7 +9,14 @@
         $sql = "SELECT * FROM imovel WHERE ID_IM = '$id'";
 
         if ($result = $conn->query($sql)) {
-            $row = $result->fetch_assoc();
+            if ($result->num_rows == 0) {
+                echo (
+                    '<div class="form_cad">
+                        <h4>Nada encontrado para esse imóvel!</h4>
+                    </div>'
+                    );
+            }else{
+                $row = $result->fetch_assoc();
 
                 $FK_TI = $row['FK_TI'];
 
@@ -57,16 +64,21 @@
                                     <h4>Área (m²):</h4><p class="boxborder_child">'.$row["area"].'</p>
                                 </div>
                             </div>
-                        <div class="info_action">
-                            <button class="formbtn ndlogin">Alugar</button>
-                            <button class="formbtn ndlogin">Comprar</button><br>
-                            <h4>R$ '.$row["preco"].'</h4>
+                        <div class="info_action">');
+                        if ((isset ($_SESSION['tipo_pessoa']) == true)) {
+                            echo ('
+                            <button class="formbtn">Alugar</button>
+                            <button class="formbtn">Comprar</button><br>');
+                        }
+                        echo ('
+                            <div style="display: flex;"><h4>Preço: </h4><h4>R$ '.$row["preco"].'</h4></div>
                         </div>
                         <div><img class="info_img" src="'.$row["imglink"].'"></div>      
                     </div>      
-                </div>');
+                </div>');   
+            }      
         }else{
-            echo "Erro: " . $sql . "<br>" . $conn->error;
+            //echo "Erro: " . $sql . "<br>" . $conn->error;
         }       
         CloseConnection($conn);    
     }
