@@ -570,6 +570,25 @@ footer p{
     	margin: auto;
 	}
 
+	section .newsright img{
+		width: 100%;
+		height: 240px;
+		float: none;
+	}
+
+	.description{
+		width: 100%;
+		height: auto;
+	}
+
+	.bordergrid{
+		width: 100%;
+	}
+
+	.grid img{
+		width: 100%;
+	}
+
 	.iconbox{
 		flex-direction: column;
 	}	
@@ -598,6 +617,21 @@ footer p{
 	.item4,.item5,.item6,
 	.item7,.item8,.item9{
 		display: none;
+	}
+
+	footer{
+		display: flex;
+		flex-direction: column;
+	}
+
+	footer .ft_left{
+		padding: 0;
+		float: none;
+	}
+
+	footer .ft_right{
+		padding: 0;
+		float: none;
 	}
 
 	/*CLIENTE.html*/

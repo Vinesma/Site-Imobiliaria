@@ -34,11 +34,12 @@
 		$im_qbanheiros = $_POST["qbanheiros"];
 		$im_endereco = $_POST["endereco"];
 		$im_tipo = $_POST["tipo_imovel"];
+		$im_preco = $_POST["preco"];
 		$im_proprietario = $_POST["proprietario"];
 		$destdir = 'imgdata/';
 		$im_imglink = $destdir . uploadIMG($destdir);
 
-		$sql = "INSERT INTO imovel (cidade, finalidade, garagens , area, descricao, quartos, suites, banheiros, endereco, imglink, FK_TI, FK_CLPR) VALUES ('$im_cidade', '$im_finalidade', '$im_qgaragens', '$im_area', '$im_descricao', '$im_qquartos', '$im_qsuites', '$im_qbanheiros', '$im_endereco', '$im_imglink', '$im_tipo', '$im_proprietario')";
+		$sql = "INSERT INTO imovel (cidade, finalidade, garagens , area, descricao, quartos, suites, banheiros, endereco, preco, imglink, FK_TI, FK_CLPR) VALUES ('$im_cidade', '$im_finalidade', '$im_qgaragens', '$im_area', '$im_descricao', '$im_qquartos', '$im_qsuites', '$im_qbanheiros', '$im_endereco', '$im_preco', '$im_imglink', '$im_tipo', '$im_proprietario')";
 
 		if ($conn->query($sql) === TRUE) {
 		    echo "Imovel cadastrado com sucesso!";

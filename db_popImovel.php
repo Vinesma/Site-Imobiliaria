@@ -60,7 +60,7 @@
                         <div class="info_action">
                             <button class="formbtn ndlogin">Alugar</button>
                             <button class="formbtn ndlogin">Comprar</button><br>
-                            <h4>R$ 000.000.000,00</h4>
+                            <h4>R$ '.$row["preco"].'</h4>
                         </div>
                         <div><img class="info_img" src="'.$row["imglink"].'"></div>      
                     </div>      
@@ -71,54 +71,3 @@
         CloseConnection($conn);    
     }
 ?>
-
-<!-- <div class="form_cad">
-            <div class="grid_info">
-                <div class="info_desc">             
-                    <h3>Descrição:</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="info_stat">
-                    <h3>Características:</h3>
-                    <div class="iconbox boxborder flex_center">
-                    <div class="boxborder_child">
-                        <i class="fas fa-bed"> <p>Quartos:</p></i>
-                        <p>0</p>
-                    </div>
-                    <div class="boxborder_child">
-                        <i class="fas fa-toilet"> <p>Banheiros:</p></i>
-                        <p>0</p>
-                    </div>
-                    <div class="boxborder_child">
-                        <i class="fas fa-car"> <p>Garagens:</p></i>
-                        <p>0</p>
-                    </div>
-                    <div class="boxborder_child">
-                        <i class="fas fa-bed"></i>
-                        <i class="fas fa-toilet"> <p>Suites:</p></i>
-                        <p>0</p>
-                    </div>
-                </div>
-                <div class="info_loc">
-                    <h4>Cidade:</h4><p class="boxborder_child">CIDADE</p>
-                    <h4>Endereço:</h4><p class="boxborder_child">Rua 0 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-                </div>
-                <div class="info_outros">
-                    <h4>Tipo:</h4><p class="boxborder_child">TIPO</p>
-                    <h4>Finalidade:</h4><p class="boxborder_child">FINALIDADE</p>
-                    <h4>Área (m²):</h4><p class="boxborder_child">000</p>
-                </div>
-                </div>
-                <div class="info_action">
-                    <button class="formbtn">Alugar</button>
-                    <button class="formbtn">Comprar</button><br>
-                    <h4>R$ 000.000.000,00</h4>
-                </div>
-                <div><img class="info_img" src="img/house1.jpg"></div>      
-            </div>      
-        </div> -->

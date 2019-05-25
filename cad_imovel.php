@@ -118,6 +118,8 @@
 				</fieldset>
 				<label>Área (m²):</label>
 				<input class="inputNumberw" type="number" name="area" placeholder="Área do lote" required>
+				<label>Preço:</label>
+				<input class="inputNumberw" type="number" name="preco" placeholder="R$" required>
 				<label>Descrição:</label>
 				<textarea class="inputw" name="descricao" placeholder="Uma descrição rápida do imóvel." required></textarea>
 				<label>Foto:</label>
