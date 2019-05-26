@@ -78,7 +78,7 @@
                 </div>');   
             }      
         }else{
-            //echo "Erro: " . $sql . "<br>" . $conn->error;
+            echo "Erro: " . $sql . "<br>" . $conn->error;
         }       
         CloseConnection($conn);    
     }

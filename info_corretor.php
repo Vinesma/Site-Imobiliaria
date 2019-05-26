@@ -83,7 +83,7 @@
 		<div class="grid">			
 			<div class="userprofile_r">
 				<?php include ('db_getImage.php'); ?>
-				<a href="#">Editar dados</a>
+				<!-- <a href="#">Editar dados</a> wontfix-->
 			</div>
 			<div class="userprofile_c">					
 					<?php include ("db_popCliente.php") ?>		
