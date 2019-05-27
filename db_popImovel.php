@@ -66,12 +66,16 @@
                             </div>
                         <div class="info_action">');
                         if ((isset ($_SESSION['tipo_pessoa']) == true)) {
-                            echo ('
-                            <button class="formbtn">Alugar</button>
-                            <button class="formbtn">Comprar</button><br>');
+                            if ($_SESSION['tipo_pessoa'] != 'A') {
+                                if ($row["finalidade"] == 'Venda') {
+                                    echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Comprar</button></a><br>');
+                                }else{
+                                    echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Alugar</button></a>');
+                                }
+                            }
                         }
                         echo ('
-                            <div style="display: flex;"><h4>Preço: </h4><h4>R$ '.$row["preco"].'</h4></div>
+                            <div class="pricedsp"><h4>Preço: </h4><h4>R$ '.$row["preco"].'</h4></div>
                         </div>
                         <div><img class="info_img" src="'.$row["imglink"].'"></div>      
                     </div>      

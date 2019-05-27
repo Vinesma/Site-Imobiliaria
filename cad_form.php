@@ -52,12 +52,12 @@
 						</form>
 					</div>
 				</div>
-			</form>
+			</form>			
 			<?php
 				if ($_SESSION['tipo_pessoa'] == 'A') {
-					$page = "info_corretor.php";
+					$page = 'info_corretor.php';
 				}else{
-					$page = "info_cliente.php";
+					$page = 'info_cliente.php';
 				}
 
 				echo 
@@ -68,38 +68,20 @@
 				echo
 					'<span class="nodisplay">|</span>
 					<label><a href="db_logout.php"><i class="fas fa-sign-in-alt"></i> Logout</a></label>
-				</form>';
+				</form>';					
 			 ?>	
 		</div>
 	</header>
 
 	<section class="cont_leftborder">
 		<div class="container_title">
-			<h3>Dados do corretor:</h3>
+			<h3><i class="fas fa-info-circle"></i> Informação:</h3>
 		</div>
 	</section>
 
 	<section>
-		<div class="grid">			
-			<div class="userprofile_r">
-				<?php include ('db_getImage.php'); ?>
-				<!-- <a href="#">Editar dados</a> wontfix-->
-			</div>
-			<div class="userprofile_c">					
-					<?php include ("db_popCliente.php") ?>		
-			</div>
-			<div class="userprofile_l grid">
-				<h3 class="dashtop">Painel:</h3>
-				<div class="dash1">
-					<?php echo '<a href="busca.php?type=locacao" title="Imóveis em locação"><img class="dashimg" src="img/dash_ploc.png"></a>'; ?>				
-				</div>
-				<div class="dash2">
-					<?php echo '<a href="busca.php?type=compra" title="Imóveis em aquisição"><img class="dashimg" src="img/dash_pbuying.png"></a>'; ?>
-				</div>			
-				<div class="dash3">
-					<a href="cad_imovel.php" title="Adicionar imóveis"><img class="dashimg" src="img/dash_addhouse.png"></a>	
-				</div>
-			</div>	
+		<div style="margin: 15px;">
+			<?php include ("db_cadform.php"); ?>		
 		</div>
 	</section>
 

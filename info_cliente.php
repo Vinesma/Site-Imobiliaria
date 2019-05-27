@@ -91,7 +91,7 @@
 			<div class="userprofile_l grid">
 				<h3 class="dashtop">Painel:</h3>
 				<div class="dash1">
-					<?php echo '<a href="busca.php?user_id='.$_SESSION['id'].'" title="Meus Imóveis"><img class="dashimg" src="img/dash_myhouses.png"></a>'; ?>					
+					<?php echo '<a href="busca.php?user_id='.$_SESSION['id'].'" title="Meus Imóveis"><img class="dashimg" src="img/dash_myhouses.png"></a>'; ?>
 				</div>
 				<div class="dash2">
 					<a href="#" title="Imóveis em aquisição"><img class="dashimg" src="img/dash_buyer.png"></a>

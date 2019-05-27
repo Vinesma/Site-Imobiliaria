@@ -50,7 +50,7 @@ header h2{
 .formbtn{
 	background-color: #226597;
 	color: white;
-	border: none;
+	border: 2px solid #348498;
 	border-radius: 5px;
 	padding: 4px;
 	margin: 0px 5px;
@@ -60,6 +60,27 @@ header h2{
 .formbtn:hover{
 	background-color: #87c0cd;
 	color: white;	
+}
+
+.trbtn{
+	background-color: #009975;
+	color: white;
+	font-size: 1.1rem;
+	border: 2px solid #454d66;
+	border-radius: 4px;
+	padding: 8px 25px;
+	margin: 0px 5px;
+	transition-duration: 0.3s;
+}
+
+.trbtn:hover{
+	background-color: #58b368;
+	color: white;	
+}
+
+.pricedsp{
+	display: flex;
+	font-size: 1.3rem;
 }
 
 .container_top a{
@@ -313,13 +334,14 @@ section a:link{
 	border-radius: 3px;
 	grid-row-start: 1;
 	grid-column-start: 2;
-	width: 480px;
+	width: 100%;
 	height: 380px;
 }
 
 .info_action{
-	margin-right: auto;
-	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
 	margin-top: 20px;
 	grid-row-start: 2;
 	grid-column-start: 2;
@@ -471,7 +493,7 @@ footer p{
 .ft_left p{
 	background-color: #222831;
 	padding: 0 3px;
-	margin: 15px 5px 5px 5px;
+	margin: 20px 5px 5px 5px;
 	border-radius: 3px;
 	color: white;
 }
@@ -487,9 +509,13 @@ footer p{
 
 .ft_right a{
 	background-color: #222831;
-	padding: 3px;
-	margin: 5px;
+	padding: 5px;
+	margin: 20px 5px;
 	border-radius: 3px;
+}
+
+.ft_right p{
+	padding: 0;
 }
 
 /*MEDIA QUERY*/
