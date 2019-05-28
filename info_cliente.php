@@ -94,10 +94,10 @@
 					<?php echo '<a href="busca.php?user_id='.$_SESSION['id'].'" title="Meus Imóveis"><img class="dashimg" src="img/dash_myhouses.png"></a>'; ?>
 				</div>
 				<div class="dash2">
-					<a href="#" title="Imóveis em aquisição"><img class="dashimg" src="img/dash_buyer.png"></a>
+					<a href="busca.php?typec=compra" title="Imóveis em aquisição"><img class="dashimg" src="img/dash_buyer.png"></a>
 				</div>
 				<div class="dash3">
-					<a href="#" title="Imóveis em locação"><img class="dashimg" src="img/dash_locador.png"></a>
+					<a href="busca.php?typec=locacao" title="Imóveis em locação"><img class="dashimg" src="img/dash_locador.png"></a>
 				</div>
 			</div>
 		</div>
