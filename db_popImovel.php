@@ -74,11 +74,27 @@
                             <div class="info_action">');
                             if ((isset ($_SESSION['tipo_pessoa']) == true)) {
                                 if ($_SESSION['tipo_pessoa'] != 'A') {
+
+                                    $user_id = $_SESSION['id'];                                
+
                                     if ($row["finalidade"] == 'Venda') {
-                                        echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Comprar</button></a><br>');
+                                            
+                                        $sql4 = "SELECT * FROM venda WHERE FK_CTCP = $user_id AND FK_IM = $id AND aprovado = 1";
+                                        $result4 = $conn->query($sql4);
+                                            
+                                        if ($result4->num_rows == 0) {
+                                            echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Comprar</button></a><br>');
+                                        }                                            
                                     }else{
-                                        echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Alugar</button></a>');
-                                    }
+
+                                        $sql4 = "SELECT * FROM aluguel WHERE FK_CLLC = $user_id AND FK_IM = $id AND aprovado = 1";
+                                        $result4 = $conn->query($sql4);
+
+                                        if ($result4->num_rows == 0) {
+                                            echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Alugar</button></a>');   
+                                        }
+                                            
+                                    }                                          
                                 }
                             }
                             echo ('
