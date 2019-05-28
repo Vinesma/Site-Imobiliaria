@@ -197,6 +197,17 @@ section a:link{
  	border-top: 1px solid black 	 	
 }
 
+.checkbox{
+	display: flex;
+	background-color: #222831;
+	padding: 3px;
+	border-radius: 2px;
+}
+
+.checkbox a{
+	margin: 0 2px;
+}
+
 .boxborder{
 	justify-content: center;
 	margin-top: 10px;

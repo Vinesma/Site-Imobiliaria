@@ -140,11 +140,12 @@
                                     <p>Comprador:</p>
                                     <p>'.$row_comprador["login"].'</p>
                                 </div>                                
-                                <div>');
+                                <div class="checkbox">');
                                 if ($row_venda['aprovado'] == 0) {
-                                    echo '<a href="db_aprova.php?id='.$row_venda['ID_VD'].'&t=c&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>';
+                                    echo '<a href="db_deleta.php?id='.$row_venda['ID_VD'].'&t=c&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>';
+                                    echo '<a href="db_aprova.php?id='.$row_venda['ID_VD'].'&t=c&adm='.$_SESSION['id'].'"><i class="fas fa-check-circle"></i></a>';
                                 }else{
-                                    echo '<i class="fas fa-check-circle"></i>';
+                                    echo '<i class="fas fa-check"></i>';
                                 }   
                         echo ('</div>
                             </div>  
@@ -201,11 +202,12 @@
                                     <p>Locatário:</p>
                                     <p>'.$row_comprador["login"].'</p>
                                 </div>                                
-                                <div>');
+                                <div class="checkbox">');
                                 if ($row_aluguel['aprovado'] == 0) {
-                                    echo '<a href="db_aprova.php?id='.$row_aluguel['ID_CO'].'&t=a&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>';
+                                    echo '<a href="db_deleta.php?id='.$row_aluguel['ID_CO'].'&t=a&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>';
+                                    echo '<a href="db_aprova.php?id='.$row_aluguel['ID_CO'].'&t=a&adm='.$_SESSION['id'].'"><i class="fas fa-check-circle"></i></a>';
                                 }else{
-                                    echo '<i class="fas fa-check-circle"></i>';
+                                    echo '<i class="fas fa-check"></i>';
                                 }   
                         echo ('</div>
                             </div>  
