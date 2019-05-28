@@ -20,20 +20,11 @@
         	echo ("<div class="."datacliente jsSetPF"."><h4>CPF:</h4><p>".$row["cpf"]."</p></div>");
     		
 
-    		$sql = "SELECT email FROM cliente WHERE ID_CL = '$id'";
+    		$sql = "SELECT * FROM cliente WHERE ID_CL = '$id'";
     		$result = $conn->query($sql);
     		$row = $result->fetch_assoc();
         	echo ("<div class="."datacliente"."><h4>Email:</h4><p>".$row["email"]."</p></div>");
-    		
-
-    		$sql = "SELECT endereco FROM cliente WHERE ID_CL = '$id'";
-    		$result = $conn->query($sql);
-    		$row = $result->fetch_assoc();
-        	echo ("<div class="."datacliente"."><h4>Endereço:</h4><p>".$row["endereco"]."</p></div>");    		
-
-    		$sql = "SELECT telefone FROM cliente WHERE ID_CL = '$id'";
-    		$result = $conn->query($sql);
-    		$row = $result->fetch_assoc();
+        	echo ("<div class="."datacliente"."><h4>Endereço:</h4><p>".$row["endereco"]."</p></div>");
         	echo ("<div class="."datacliente"."><h4>Telefone:</h4><p>".$row["telefone"]."</p></div>");
 
     		$sql = "SELECT sexo FROM pessoa_fisica WHERE FK_CL = '$id'";

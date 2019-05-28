@@ -19,6 +19,7 @@
                 $row = $result->fetch_assoc();
 
                 $FK_TI = $row['FK_TI'];
+                $id_pr = $row['FK_CLPR'];
 
                 $sql2 = "SELECT * FROM tipo_imovel WHERE ID_TI = '$FK_TI'";
                 if ($result2 = $conn->query($sql2)) {
@@ -26,6 +27,12 @@
                 }else{
                     echo "Erro: " . $sql2 . "<br>" . $conn->error;   
                 }
+                
+                $sql3 = "SELECT * FROM cliente WHERE ID_CL = $id_pr";
+                $result3 = $conn->query($sql3);
+                $row3 = $result3->fetch_assoc();
+
+
                 echo ('
                     <div class="form_cad">
                         <div class="grid_info">
@@ -64,22 +71,30 @@
                                     <h4>Área (m²):</h4><p class="boxborder_child">'.$row["area"].'</p>
                                 </div>
                             </div>
-                        <div class="info_action">');
-                        if ((isset ($_SESSION['tipo_pessoa']) == true)) {
-                            if ($_SESSION['tipo_pessoa'] != 'A') {
-                                if ($row["finalidade"] == 'Venda') {
-                                    echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Comprar</button></a><br>');
-                                }else{
-                                    echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Alugar</button></a>');
+                            <div class="info_action">');
+                            if ((isset ($_SESSION['tipo_pessoa']) == true)) {
+                                if ($_SESSION['tipo_pessoa'] != 'A') {
+                                    if ($row["finalidade"] == 'Venda') {
+                                        echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Comprar</button></a><br>');
+                                    }else{
+                                        echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Alugar</button></a>');
+                                    }
                                 }
                             }
-                        }
-                        echo ('
-                            <div class="pricedsp"><h4>Preço: </h4><h4>R$ '.$row["preco"].'</h4></div>
-                        </div>
-                        <div><img class="info_img" src="'.$row["imglink"].'"></div>      
-                    </div>      
-                </div>');   
+                            echo ('
+                                <div class="pricedsp"><h4>Preço: </h4><h4>R$ '.$row["preco"].'</h4></div>
+                                <div class="info_prop">
+                                    <h4>Proprietário:</h4>
+                                    <div class="datacliente"><p>'.$row3["login"].'</p><img class="info_img_pr" src="'.$row3["imglink"].'"></div>
+                                    <h4>Telefone:</h4>
+                                    <div class="datacliente"><p>'.$row3["telefone"].'</p></div>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="info_img" src="'.$row["imglink"].'">
+                            </div>     
+                        </div>      
+                    </div>');   
             }      
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
