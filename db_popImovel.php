@@ -25,9 +25,9 @@
                 if ($result2 = $conn->query($sql2)) {
                     $row2 = $result2->fetch_assoc();
                 }else{
-                    echo "Erro: " . $sql2 . "<br>" . $conn->error;   
+                    echo "Erro: " . $sql2 . "<br>" . $conn->error;
                 }
-                
+
                 $sql3 = "SELECT * FROM cliente WHERE ID_CL = $id_pr";
                 $result3 = $conn->query($sql3);
                 $row3 = $result3->fetch_assoc();
@@ -36,7 +36,7 @@
                 echo ('
                     <div class="form_cad">
                         <div class="grid_info">
-                            <div class="info_desc">             
+                            <div class="info_desc">
                                 <h3>Descrição:</h3>
                                 <p>'.$row["descricao"].'</p>
                             </div>
@@ -75,26 +75,26 @@
                             if ((isset ($_SESSION['tipo_pessoa']) == true)) {
                                 if ($_SESSION['tipo_pessoa'] != 'A') {
 
-                                    $user_id = $_SESSION['id'];                                
+                                    $user_id = $_SESSION['id'];
 
                                     if ($row["finalidade"] == 'Venda') {
-                                            
+
                                         $sql4 = "SELECT * FROM venda WHERE FK_CTCP = $user_id AND FK_IM = $id AND aprovado = 1";
                                         $result4 = $conn->query($sql4);
-                                            
-                                        if ($result4->num_rows == 0) {
+
+                                        if (($result4->num_rows == 0) && ($id_pr != $user_id)) {
                                             echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Comprar</button></a><br>');
-                                        }                                            
+                                        }
                                     }else{
 
                                         $sql4 = "SELECT * FROM aluguel WHERE FK_CLLC = $user_id AND FK_IM = $id AND aprovado = 1";
                                         $result4 = $conn->query($sql4);
 
-                                        if ($result4->num_rows == 0) {
-                                            echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Alugar</button></a>');   
+                                        if (($result4->num_rows == 0) && ($id_pr != $user_id)) {
+                                            echo ('<a href="cad_form.php?im_id='.$row["ID_IM"].'"><button class="trbtn">Alugar</button></a>');
                                         }
-                                            
-                                    }                                          
+
+                                    }
                                 }
                             }
                             echo ('
@@ -108,13 +108,13 @@
                             </div>
                             <div>
                                 <img class="info_img" src="'.$row["imglink"].'">
-                            </div>     
-                        </div>      
-                    </div>');   
-            }      
+                            </div>
+                        </div>
+                    </div>');
+            }
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
-        }       
-        CloseConnection($conn);    
+        }
+        CloseConnection($conn);
     }
 ?>
