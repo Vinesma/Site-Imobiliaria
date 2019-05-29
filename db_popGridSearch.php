@@ -13,13 +13,13 @@
         }else{
             cliAluguel();
         }
-    }else{    
+    }else{
         popGridSearch();
     }
 
     function popGridSearch(){
         $conn = ConnectTo();
-        
+
         $tipo_imovel = $_GET['tipo_imovel'];
         $finalidade = $_GET['finalidade'];
         $cidade = $_GET['cidade'];
@@ -50,15 +50,15 @@
                                     <i class="fas fa-car"> <p>Garagens:</p></i>
                                     <p>'.$row["garagens"].'</p>
                                 </div>
-                            </div>  
+                            </div>
                         </div>');
                     $contador++;
                 }
             }
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
-        }       
-        CloseConnection($conn);    
+        }
+        CloseConnection($conn);
     }
 
     function popGridMeusImoveis(){
@@ -92,19 +92,19 @@
                                     <i class="fas fa-car"> <p>Garagens:</p></i>
                                     <p>'.$row["garagens"].'</p>
                                 </div>
-                            </div>  
+                            </div>
                         </div>');
                     $contador++;
                 }
             }
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
-        }       
-        CloseConnection($conn);    
+        }
+        CloseConnection($conn);
     }
 
     function admCompra(){
-        $conn = ConnectTo();        
+        $conn = ConnectTo();
 
         $sql_venda = "SELECT * FROM venda";
         $contador = 1;
@@ -145,28 +145,33 @@
                                 <div>
                                     <p>Comprador:</p>
                                     <p>'.$row_comprador["login"].'</p>
-                                </div>                                
-                                <div class="checkbox">');
+                                </div>');
                                 if ($row_venda['aprovado'] == 0) {
-                                    echo '<a href="db_deleta.php?id='.$row_venda['ID_VD'].'&t=c&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>';
-                                    echo '<a href="db_aprova.php?id='.$row_venda['ID_VD'].'&t=c&adm='.$_SESSION['id'].'"><i class="fas fa-check-circle"></i></a>';
+                                    echo '<div class="checkbox-dec">
+                                    <a href="db_aprova.php?id='.$row_venda['ID_VD'].'&t=c&adm='.$_SESSION['id'].'"><i class="fas fa-check-circle"></i></a>';
+                                    echo '<a href="db_deleta.php?id='.$row_venda['ID_VD'].'&t=c&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>
+                                    </div>';
                                 }else{
-                                    echo '<i class="fas fa-check"></i>';
-                                }   
+                                    echo '<div class="checkbox">
+                                    <i class="fas fa-check"></i>
+                                    </div>';
+                                    echo '<div class="checkbox" style="background-color: brown;">
+                                    <a href="db_deleta.php?id='.$row_venda['ID_VD'].'&t=c&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>
+                                    </div>';
+                                }
                         echo ('</div>
-                            </div>  
                         </div>');
                     $contador++;
                 }
             }
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
-        }       
-        CloseConnection($conn); 
+        }
+        CloseConnection($conn);
     }
 
     function admAluguel(){
-        $conn = ConnectTo();        
+        $conn = ConnectTo();
 
         $sql_aluguel = "SELECT * FROM aluguel";
         $contador = 1;
@@ -207,28 +212,33 @@
                                 <div>
                                     <p>Locatário:</p>
                                     <p>'.$row_comprador["login"].'</p>
-                                </div>                                
-                                <div class="checkbox">');
+                                </div>');
                                 if ($row_aluguel['aprovado'] == 0) {
-                                    echo '<a href="db_deleta.php?id='.$row_aluguel['ID_CO'].'&t=a&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>';
-                                    echo '<a href="db_aprova.php?id='.$row_aluguel['ID_CO'].'&t=a&adm='.$_SESSION['id'].'"><i class="fas fa-check-circle"></i></a>';
+                                    echo '<div class="checkbox-dec">
+                                    <a href="db_aprova.php?id='.$row_aluguel['ID_CO'].'&t=a&adm='.$_SESSION['id'].'"><i class="fas fa-check-circle"></i></a>';
+                                    echo '<a href="db_deleta.php?id='.$row_aluguel['ID_CO'].'&t=a&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>
+                                    </div>';
                                 }else{
-                                    echo '<i class="fas fa-check"></i>';
-                                }   
+                                    echo '<div class="checkbox">
+                                    <i class="fas fa-check"></i>
+                                    </div>';
+                                    echo '<div class="checkbox" style="background-color: brown;">
+                                    <a href="db_deleta.php?id='.$row_aluguel['ID_CO'].'&t=a&adm='.$_SESSION['id'].'"><i class="fas fa-times-circle"></i></a>
+                                    </div>';
+                                }
                         echo ('</div>
-                            </div>  
                         </div>');
                     $contador++;
                 }
             }
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
-        }       
-        CloseConnection($conn); 
+        }
+        CloseConnection($conn);
     }
 
     function cliCompra(){
-        $conn = ConnectTo();        
+        $conn = ConnectTo();
 
         $cli_id = $_SESSION['id'];
         $sql_venda = "SELECT * FROM venda WHERE FK_CTCP = $cli_id";
@@ -270,27 +280,27 @@
                                 <div>
                                     <p>Comprador:</p>
                                     <p>'.$row_comprador["login"].'</p>
-                                </div>                                
+                                </div>
                                 <div class="checkbox">');
                                 if ($row_venda['aprovado'] == 0) {
-                                    echo '<i class="fas fa-times" style="padding: 0 2px;"></i>';                                  
+                                    echo '<i class="fas fa-times" style="padding: 0 2px;"></i>';
                                 }else{
                                     echo '<i class="fas fa-check"></i>';
-                                }   
+                                }
                         echo ('</div>
-                            </div>  
+                            </div>
                         </div>');
                     $contador++;
                 }
             }
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
-        }       
-        CloseConnection($conn); 
+        }
+        CloseConnection($conn);
     }
 
     function cliAluguel(){
-        $conn = ConnectTo();        
+        $conn = ConnectTo();
 
         $cli_id = $_SESSION['id'];
         $sql_aluguel = "SELECT * FROM aluguel";
@@ -332,22 +342,22 @@
                                 <div>
                                     <p>Locatário:</p>
                                     <p>'.$row_comprador["login"].'</p>
-                                </div>                                
+                                </div>
                                 <div class="checkbox">');
                                 if ($row_aluguel['aprovado'] == 0) {
                                     echo '<i class="fas fa-times" style="padding: 0 2px;></i>';
                                 }else{
                                     echo '<i class="fas fa-check"></i>';
-                                }   
+                                }
                         echo ('</div>
-                            </div>  
+                            </div>
                         </div>');
                     $contador++;
                 }
             }
         }else{
             echo "Erro: " . $sql . "<br>" . $conn->error;
-        }       
+        }
         CloseConnection($conn);
     }
 ?>

@@ -59,7 +59,7 @@ header h2{
 
 .formbtn:hover{
 	background-color: #87c0cd;
-	color: white;	
+	color: white;
 }
 
 .trbtn{
@@ -75,7 +75,7 @@ header h2{
 
 .trbtn:hover{
 	background-color: #58b368;
-	color: white;	
+	color: white;
 }
 
 .pricedsp{
@@ -100,7 +100,7 @@ header h2{
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	height: 3.3rem;	
+	height: 3.3rem;
 	background-color: #226597;
 	color: white;
 	box-shadow: 0 1px 4px black;
@@ -157,7 +157,7 @@ header h2{
 .flex_center{
 	display: flex;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
 	margin: 10px;
 }
 
@@ -192,20 +192,39 @@ section a:link{
 
 .iconbox{
  	justify-content: space-evenly;
- 	margin-top: 0; 		
+ 	margin-top: 0;
  	margin-bottom: 0;
- 	border-top: 1px solid black 	 	
+ 	border-top: 1px solid black
 }
 
-.checkbox{
+.checkbox-dec{
 	display: flex;
 	background-color: #222831;
 	padding: 3px;
 	border-radius: 2px;
 }
 
+.checkbox-dec a{
+	margin: 0 2px;
+}
+
+.checkbox-dec a:link{
+	color: white !important;
+}
+
+.checkbox{
+	display: flex;
+	background-color: #58b368;
+	padding: 3px;
+	border-radius: 2px;
+}
+
 .checkbox a{
 	margin: 0 2px;
+}
+
+.checkbox a:link{
+	color: white !important;
 }
 
 .boxborder{
@@ -228,13 +247,13 @@ section a:link{
 
 .cont_leftborder{
 	border-left: 15px #222831 solid;
-	background-color: #226597;	
+	background-color: #226597;
 }
 
 .container_title{
 	margin: 10px;
-	font-size: 1.2rem;	
-	color: white;	
+	font-size: 1.2rem;
+	color: white;
 }
 
 .container_title h3{
@@ -265,7 +284,7 @@ section a:link{
 }
 
 .grid .iconbox p{
-	padding: 8px 0px;	
+	padding: 8px 0px;
 	font-size: 1rem;
 	margin: 0;
 }
@@ -311,7 +330,7 @@ section a:link{
 }
 
 .grid_info p{
-	margin: 0;	
+	margin: 0;
 }
 
 .info_desc{
@@ -365,7 +384,7 @@ section a:link{
 .info_action{
 	display: flex;
 	flex-direction: column;
-	align-items: center; 
+	align-items: center;
 	margin-top: 20px;
 	grid-row-start: 2;
 	grid-column-start: 2;
@@ -382,8 +401,8 @@ section a:link{
 	border-radius: 8px;
 	width: 200px;
 	height: 200px;
-	margin-top: 20px; 
-	margin-bottom: 20px; 
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .grid a{
@@ -443,7 +462,7 @@ section a:link{
 .userprofile_l .dashtop{
 	align-self: end;
 	grid-column-start: 2;
-	grid-row-start: 1;	
+	grid-row-start: 1;
 }
 
 .userprofile_l .dash1{
@@ -501,7 +520,7 @@ section a:link{
 
 footer{
 	text-align: center;
-	border-top: 1px #e0e2e5 solid;	
+	border-top: 1px #e0e2e5 solid;
 }
 
 footer p{
@@ -510,7 +529,7 @@ footer p{
 }
 
 .ft_left{
-	float: left; 
+	float: left;
 	padding-left: 30px;
 }
 
@@ -523,7 +542,7 @@ footer p{
 }
 
 .ft_right{
-	float: right; 
+	float: right;
 	padding-right: 30px;
 }
 
@@ -641,7 +660,7 @@ footer p{
 
 	.iconbox{
 		flex-direction: column;
-	}	
+	}
 
 	.item1{
 		grid-row-start: 1;
