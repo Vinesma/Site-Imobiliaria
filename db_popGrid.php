@@ -4,7 +4,7 @@
     function popGrid(){
         $conn = ConnectTo();
 
-        $sql = "SELECT * FROM imovel ORDER BY RAND() LIMIT 9";
+        $sql = "SELECT * FROM imovel LEFT JOIN venda ON imovel.ID_IM = venda.FK_IM WHERE venda.aprovado IS NULL ORDER BY RAND() LIMIT 9";
         $contador = 1;
 
         if ($result = $conn->query($sql)) {

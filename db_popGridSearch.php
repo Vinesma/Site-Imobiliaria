@@ -24,7 +24,7 @@
         $finalidade = $_GET['finalidade'];
         $cidade = $_GET['cidade'];
 
-        $sql = "SELECT * FROM imovel WHERE cidade = '$cidade' AND finalidade = '$finalidade' AND FK_TI = $tipo_imovel";
+        $sql = "SELECT * FROM imovel LEFT JOIN venda ON imovel.ID_IM = venda.FK_IM WHERE venda.aprovado IS NULL AND cidade = '$cidade' AND finalidade = '$finalidade' AND FK_TI = $tipo_imovel";
         $contador = 1;
 
         if ($result = $conn->query($sql)) {
